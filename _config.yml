@@ -1,9 +1,9 @@
 theme: jekyll-theme-minimal
-title: GitHub pages template
-description: A simple template based on minimal jekyll theme
+title: Maternal Assist
+description: Input risk factors to output assessments from CMQCC, modified CMQCC, and numerical risk prediction.
 show_downloads: True
 navigation:
   - title: Home
     url: /
-  - title: Setup
-    url: setup
+  - title: Assessment
+    url: map
