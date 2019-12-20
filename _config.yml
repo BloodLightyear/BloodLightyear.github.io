@@ -1,11 +1,13 @@
 theme: jekyll-theme-minimal
-title: Maternal Assist
-description: Input risk factors to output assessments from CMQCC, modified CMQCC, and numerical risk prediction.
+title: Maternal Assistance Programming
+description: This website can directly output assessments from CMQCC, modified CMQCC, and a numerical risk prediction using the assessment form.  
+Details comparing the methods behind each type of assessment can be found in the methods section!
+
 show_downloads: True
 navigation:
   - title: Home
     url: /
   - title: Assessment Form
     url: MAP.html
-  - title: Assessment Details
-    url: details
+  - title: Methods
+    url: methods
