@@ -5,5 +5,7 @@ show_downloads: True
 navigation:
   - title: Home
     url: /
-  - title: Assessment
-    url: map
+  - title: Assessment Form
+    url: MAP.html
+  - title: Assessment Details
+    url: details
