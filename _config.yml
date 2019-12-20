@@ -8,6 +8,6 @@ navigation:
   - title: Home
     url: /
   - title: Assessment Form
-    url: MAP.html
+    url: MAP
   - title: Methods
     url: methods
