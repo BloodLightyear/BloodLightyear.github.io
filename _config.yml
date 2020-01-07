@@ -2,10 +2,14 @@ theme: jekyll-theme-minimal
 title: Maternal Assistance Programming
 description: This website will directly output assessments from CMQCC, modified CMQCC, and a numerical risk prediction using the assessment form.  Details comparing the methods behind each type of assessment can be found in the methods section!
 
+Input plots of hemorrhage risk:
+- [CMQCC](https://www.cmqcc.org/) - California Maternal Quality Care Collaborative
+- [MSBOS](https://www.health.gov.nl.ca/health/bloodservices/pdf/max_surgical_blood_order.pdf) - Maximal Surgical Blood Ordering System 
+- Modified CMQCC
+- Numerical estimation of risk
+
 show_downloads: True
 navigation:
-  - title: Home
-    url: /
   - title: Assessment Form
     url: MAP
   - title: Methods
