@@ -3,7 +3,7 @@ layout: default
 ---
 <img src="map.jpg" alt="MAP">
 
-# {site.title}
+# {{site.title}}
 {{site.description}}
 
 
