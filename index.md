@@ -1,6 +1,6 @@
 ---
 layout: default
 ---
-# MAP
+# {site.title}
 {{site.description}}
 
