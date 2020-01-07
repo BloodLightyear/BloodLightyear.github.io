@@ -1,5 +1,5 @@
 theme: jekyll-theme-minimal
-title: MAP
+title: Maternal Assistance Programming
 description: This website will directly output assessments from CMQCC, modified CMQCC, and a numerical risk prediction using the assessment form.  Details comparing the methods behind each type of assessment can be found in the methods section!
 
 show_downloads: True
