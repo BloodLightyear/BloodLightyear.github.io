@@ -10,6 +10,8 @@ Input plots of hemorrhage risk:
 
 show_downloads: True
 navigation:
+  - title: Home
+    url: /
   - title: Assessment Form
     url: MAP
   - title: Methods
