@@ -1,5 +1,6 @@
 ---
-layout: full
+layout: default
 ---
-# {{site.title}}
+# MAP
 {{site.description}}
+
