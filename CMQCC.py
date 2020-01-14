@@ -93,9 +93,6 @@ CMQCC_Scores={"Score":[float(sum(CMQCC_low[0:4])/5),float(sum(CMQCC_med[0:7])/8)
 Score_Index= ["Low","Medium","High"];
 plot_CMQCC=pd.DataFrame(data=CMQCC_Scores,index=Score_Index)
 plot_CMQCC.plot.bar();
-plt.text(1,
-  0.5,
-  str(CMQCC['CMQCC Category'].iloc[0]).format(d),
-  transform=plt.gca().transAxes)
+plt.text(1, 0.5, str(CMQCC['CMQCC Category'].iloc[0]), transform=plt.gca().transAxes)
 plot.show(block=True);
-
+ 
