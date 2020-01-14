@@ -3,6 +3,7 @@
 Created on Fri Dec 20 10:18:54 2019
 
 @author: Michelle Pressly
+Copyright: Michelle Pressly 2019
 """
 
 import math as m
