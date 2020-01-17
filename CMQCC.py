@@ -83,17 +83,22 @@ elif sum(CMQCC_med[0:7]) >0:
     CMQCC['CMQCC Category'] = 'Medium'
     CMQCC['CMQCC Recommendation'] = 'Prenatal Type & Screen Performed, No RBC Units Cross-Matched'
 elif sum(CMQCC_low[0:4]) == 5:
-    CMQCC['CMQCC Category'] = 'Low, All Checks Indicate Low Risk'
+    CMQCC['CMQCC Category'] = 'Low, All Checks'
     CMQCC['CMQCC Recommendation'] = 'No Prenatal Prestransfusion Testing Required'
 else:
     CMQCC['CMQCC Category'] = 'Low'
     CMQCC['CMQCC Recommendation'] = 'No Prenatal Prestransfusion Testing Required'    
  
 #CMQCC=CMQCC.transpose()
-CMQCC_Scores={"Score":[float(sum(CMQCC_low[0:4])/5),float(sum(CMQCC_med[0:7])/8),float(sum(CMQCC_high[0:5])/6)]}
+CMQCC_Scores={"Score":[float(sum(CMQCC_low[0:5])/5),float(sum(CMQCC_med[0:8])/8),float(sum(CMQCC_high[0:6])/6)]}
 Score_Index= ["Low","Medium","High"];
 plot_CMQCC=pd.DataFrame(data=CMQCC_Scores,index=Score_Index)
-plot_CMQCC.plot.bar();
-plt.text(1, 0.5, str(CMQCC['CMQCC Category'].iloc[0]), transform=plt.gca().transAxes)
-plot.show(block=True);
+plot_CMQCC.plot.bar(rot=0);
+plt.text(0.3, 1, str('CMQCC:'), transform=plt.gca().transAxes, fontsize=18)
+plt.text(0.5, 1, str(CMQCC['CMQCC Category'].iloc[0]), transform=plt.gca().transAxes, fontsize=18)
+plt.ylabel('Fraction of Indications in Risk Category', fontsize=18)
+plt.rc('ytick',labelsize=18)
+plt.rc('xtick',labelsize=18)
+plt.rc('legend',fontsize=18)
+plt.show(block=True);
  
