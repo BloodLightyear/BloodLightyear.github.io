@@ -1,6 +1,6 @@
 theme: jekyll-theme-minimal
 title: Maternal Assistance Programming
-description: Directly outputing assessments from CMQCC, modified CMQCC, and a numerical risk prediction using the assessment form.  Details behind each type of assessment can be found in the methods section!
+description: Directly outputing assessments from CMQCC, modified CMQCC, and a numerical risk prediction - currently using the Codes links. Eventually, using the assessment form.  Details behind each type of assessment can be found in the methods section!
 
 
 show_downloads: True
