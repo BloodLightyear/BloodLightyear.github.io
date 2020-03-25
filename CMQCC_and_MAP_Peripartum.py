@@ -43,7 +43,7 @@ CMQCC_med[1]=input('2: Multiple gestation (1: yes, 0: no, 0: unsure): ')
 MGEST01=float(CMQCC_med[1])
 CMQCC_med[2]=input('3: > 4 previous vaginal deliveries (1: yes, 0: no, 0: unsure): ')
 PAR401=float(CMQCC_med[3])
-CMQCC_med[3]=input('4: Chorioamnionitis (1: yes, 0: no, 0: unsure): ')
+CMQCC_med[3]=input('4: Suspected or known chorioamnionitis (1: yes, 0: no, 0: unsure): ')
 CHOR01=float(CMQCC_med[3])
 CMQCC_med[4]=input('5: History of peripartum hemorrhage (1: yes, 0: no, 0: unsure): ')
 CMQCC_med[5]=input('6: Large uterine leiomyoma (1: yes, 0: no, 0: unsure): ')
@@ -97,7 +97,7 @@ else:
     CMQCC['CMQCC Recommendation'] = 'No Prenatal Prestransfusion Testing Required'    
  
 print('')
-print('Additional MAP Checks: ')
+print('Additional Antepartum Checks: ')
 print('Transfusion:')
 SMOKE01=float(input('MAP1: Smoking - Maternal smoking history (1: yes, 0: no, 0: unsure): '))
 CAUC01=float(input('MAP2: Caucasian race (1: yes, 0: no, 0: unsure): '))
@@ -173,13 +173,13 @@ plt.show(block=True);
 
 
 
-
+print('')
 print('Peripartum Additions:')                         
-CES01=float(input('MAP1: Cesarian section (1: yes, 0: no, 0: unsure): '))
-SICKLCR01=float(input('MAP2: Sickle cell crisis (1: yes, 0: no, 0: unsure): '))
-RDIS01=float(input('MAP3: Respiratory distress (1: yes, 0: no, 0: unsure): '))
-PRE01=float(input('MAP4: Preterm Labor (1: yes, 0: no, 0: unsure): '))
-PROL01=float(input('MAP5: Prolonged labor (1: yes, 0: no, 0: unsure): '))
+CES01=float(input('PERI1: Cesarian section (1: yes, 0: no, 0: unsure): '))
+SICKLCR01=float(input('PERI2: Sickle cell crisis (1: yes, 0: no, 0: unsure): '))
+RDIS01=float(input('PERI3: Respiratory distress (1: yes, 0: no, 0: unsure): '))
+PRE01=float(input('PERI4: Preterm Labor (1: yes, 0: no, 0: unsure): '))
+PROL01=float(input('PERI5: Prolonged labor (1: yes, 0: no, 0: unsure): '))
 
 Peri_h_coef= -3.1746 + CES01*0.2309 + SICKLCR01*2.9207 + RDIS01*2.1455 + AGE40*0.3353 + ARR01*0.5598 + CRET01*2.1364 + DIAB01*0.1496 + ENDO01*1.1395 + HF01*1.3378 - HD01*0.0696 + HYP01*0.4054 + LUP01*0.2516 + MGEST01*0.7902 + PAR401*0.4235 - PCES01*0.0626 + PLAC01*0.9057 + POLY01*0.5464 + PREC01*0.5904 + PREV01*1.7961 + RENF01*1.1439 + SICKL01*0.2245 + ASTH01*0.1797 + RENALA01*0.2710 + CERC01*0.1502 + MINFERT01*0.0232 + FIRSTDEL01*0.06899
 P_Peri_hem=1/(1 + np.exp(-Peri_h_coef))
