@@ -42,7 +42,7 @@ PCES01=float(CMQCC_med[0])
 CMQCC_med[1]=input('2: Multiple gestation (1: yes, 0: no, 0: unsure): ')
 MGEST01=float(CMQCC_med[1])
 CMQCC_med[2]=input('3: > 4 previous vaginal deliveries (1: yes, 0: no, 0: unsure): ')
-001=float(CMQCC_med[3])
+PAR401=float(CMQCC_med[3])
 CMQCC_med[3]=input('4: Chorioamnionitis (1: yes, 0: no, 0: unsure): ')
 CHOR01=float(CMQCC_med[3])
 CMQCC_med[4]=input('5: History of peripartum hemorrhage (1: yes, 0: no, 0: unsure): ')
@@ -127,7 +127,7 @@ if PAR401==1:
     FIRSTDEL01=0.0
 else:
     FIRSTDEL01=float(input('MAP23: First delivery (1: yes, 0: no, 0: unsure): '))                  
-        
+      
 Ante_h_coef= -3.1603 + AGE40*0.3511 + ARR01*0.6196 + ASTH01*0.1999 + CERC01*0.1836 + CRET01*2.1030 + DIAB01*0.1620 + ENDO01*1.1456 + HF01*1.6663 + HD01*0.0601 + HYP01*0.4057 + MGEST01*0.8440 + PAR401*0.4142 + PCES01*0.0443 + PLAC01*0.9229 + POLY01*0.5494 + PREC01*0.6010 + PREV01*1.9011 + RENF01*1.2820 + SICKL01*0.1667 + RENALA01*0.3970 + MINFERT01*0.0623 + FIRSTDEL01*0.0985
 P_Ante_hem=1/(1 + np.exp(-Ante_h_coef))
  
@@ -147,10 +147,8 @@ elif P_Ante_trans>0.03:
     MAP_trans_cat='Trans: Medium '# + str(round(P_Ante_trans[0],4))
 else:
     MAP_trans_cat='Trans: Low ' #+ str(round(P_Ante_trans[0],4))
-
-
-CMQCC
-
+    
+    
 #CMQCCplot=CMQCC.transpose()
 Scores={"Score":[float(sum(CMQCC_low[0:5])/5),float(sum(CMQCC_med[0:8])/8),float(sum(CMQCC_high[0:6])/6),P_Ante_hem[0],P_Ante_trans[0]]}
 Score_Index= ["Low","Medium","High","Hem","Trans"];
@@ -164,6 +162,60 @@ plt.text(2.75,P_Ante_hem[0]+0.01,  str(round(P_Ante_hem[0],4)))
 plt.text(2.75,P_Ante_hem[0]+0.05,  str(round((P_Ante_hem[0]*100),1))+'%', fontsize=14)
 plt.text(3.75,P_Ante_trans[0]+0.01,  str(round(P_Ante_trans[0],4)))
 plt.text(3.75,P_Ante_trans[0]+0.05,  str(round((P_Ante_trans[0]*100),1))+'%', fontsize=14)
+plt.ylabel('Fraction of Indications in Risk Category', fontsize=18)
+plt.rc('ytick',labelsize=18)
+plt.rc('xtick',labelsize=16)
+plt.axis([-.5,4.5,0,1.1])
+#plt.rc('legend',fontsize=18)
+#plt.legend.set_visible(False)
+plt.show(block=True); 
+
+
+
+
+
+print('Peripartum Additions:')                         
+CES01=float(input('MAP1: Cesarian section (1: yes, 0: no, 0: unsure): '))
+SICKLCR01=float(input('MAP2: Sickle cell crisis (1: yes, 0: no, 0: unsure): '))
+RDIS01=float(input('MAP3: Respiratory distress (1: yes, 0: no, 0: unsure): '))
+PRE01=float(input('MAP4: Preterm Labor (1: yes, 0: no, 0: unsure): '))
+PROL01=float(input('MAP5: Prolonged labor (1: yes, 0: no, 0: unsure): '))
+
+Peri_h_coef= -3.1746 + CES01*0.2309 + SICKLCR01*2.9207 + RDIS01*2.1455 + AGE40*0.3353 + ARR01*0.5598 + CRET01*2.1364 + DIAB01*0.1496 + ENDO01*1.1395 + HF01*1.3378 - HD01*0.0696 + HYP01*0.4054 + LUP01*0.2516 + MGEST01*0.7902 + PAR401*0.4235 - PCES01*0.0626 + PLAC01*0.9057 + POLY01*0.5464 + PREC01*0.5904 + PREV01*1.7961 + RENF01*1.1439 + SICKL01*0.2245 + ASTH01*0.1797 + RENALA01*0.2710 + CERC01*0.1502 + MINFERT01*0.0232 + FIRSTDEL01*0.06899
+P_Peri_hem=1/(1 + np.exp(-Peri_h_coef))
+ 
+Peri_t_coef= -4.7460 + CES01*0.6601 + SICKLCR01*4.1838 + RDIS01*2.8958 + PRE01*0.2446 + PROL01*0.3382 + AGE40*0.3848 + ARR01*1.0910 - CAUC01*0.9574 + CRET01*1.8715 + DIAB01*0.2271 + DEP01*0.3339 + ENDO01*1.6325 + HF01*2.2475 + HD01*0.5755 + HYP01*0.5521 + LUP01*1.0643 + MGEST01*0.6645 + MINFERT01*0.5750 + PAR401*0.3670 + PCES01*0.3826 + PLAC01*1.6409 + POLY01*0.7333 + PREC01*0.6578 + PREV01*2.4739 + RENF01*1.9658 + RENINS01*1.0121 + SICKL01*0.8921 + RENALA01*0.09861 - SMOKE01*0.1085 + UTI01*0.9807   
+P_Peri_trans=1/(1 + np.exp(-Peri_t_coef))
+
+if P_Peri_hem>0.350:
+    MAP_hem_peri_cat='Hem: High ' #+ str(round(P_Ante_hem[0],4))
+elif P_Peri_hem>0.05:
+    MAP_hem_peri_cat='Hem: Medium ' #+ str(round(P_Ante_hem[0],4))
+else:
+    MAP_hem_peri_cat='Hem: Low ' #+ str(round(P_Ante_hem[0],4))
+
+if P_Peri_trans>0.224:
+    MAP_trans_peri_cat='Trans: High ' #+ str(round(P_Ante_trans[0],4))
+elif P_Peri_trans>0.03:
+    MAP_trans_peri_cat='Trans: Medium '# + str(round(P_Ante_trans[0],4))
+else:
+    MAP_trans_peri_cat='Trans: Low ' #+ str(round(P_Ante_trans[0],4))
+
+CMQCC
+
+
+Scores_peri={"Score":[float(sum(CMQCC_low[0:5])/5),float(sum(CMQCC_med[0:8])/8),float(sum(CMQCC_high[0:6])/6),P_Peri_hem[0],P_Peri_trans[0]]}
+Score_peri_Index= ["Low","Medium","High","Hem","Trans"];
+plot_CMQCC_peri=pd.DataFrame(data=Scores_peri,index=Score_peri_Index)
+plot_CMQCC_peri.plot(rot=0,legend=None,kind='bar');
+plt.text(0.1, 1.08, str('CMQCC:'), transform=plt.gca().transAxes, fontsize=18)
+plt.text(0.1, 1.02, str(CMQCC['CMQCC Category'].iloc[0]), transform=plt.gca().transAxes, fontsize=18)
+plt.text(0.45, 1.08, str('MAP Risk Categories:'), transform=plt.gca().transAxes, fontsize=18)
+plt.text(0.45, 1.02, str(MAP_hem_peri_cat) + '  ' + str(MAP_trans_peri_cat), transform=plt.gca().transAxes, fontsize=18)
+plt.text(2.75,P_Peri_hem[0]+0.01,  str(round(P_Peri_hem[0],4)))
+plt.text(2.75,P_Peri_hem[0]+0.05,  str(round((P_Peri_hem[0]*100),1))+'%', fontsize=14)
+plt.text(3.75,P_Peri_trans[0]+0.01,  str(round(P_Peri_trans[0],4)))
+plt.text(3.75,P_Peri_trans[0]+0.05,  str(round((P_Peri_trans[0]*100),1))+'%', fontsize=14)
 plt.ylabel('Fraction of Indications in Risk Category', fontsize=18)
 plt.rc('ytick',labelsize=18)
 plt.rc('xtick',labelsize=16)
