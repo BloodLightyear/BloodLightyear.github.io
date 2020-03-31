@@ -22,7 +22,12 @@ const reset = function(ev){
 const send = function(ev){
     ev.preventDefault(); 
     ev.stopPropagation();
-    	let H1 = document.getElementById('PREV01')
+	//or the click will travel to the form and the form will submit
+    let fails = validate();
+    //IF we wanted to do some async things then use a Promise with .then and .catch
+    if(fails.length === 0){
+	document.getElementById('form-user').submit();  
+        let H1 = document.getElementById('PREV01')
 	let H2 = document.getElementById('CRET01')
 	let H3 = document.getElementById('HEMATOCRIT01')
 	let H4 = document.getElementById('BLEED01')
@@ -36,20 +41,15 @@ const send = function(ev){
 	let M6 = document.getElementById('LEIO01')
 	let M7 = document.getElementById('MACR01')
 	let M8 = document.getElementById('BMI01')
+	
 	if (H1.checked || H2.checked || H3.checked || H4.checked || H5.checked || H6.checked) {
-  	window.alert('CMQCC Classification: High Risk');
+  	alert('CMQCC Classification: High Risk');
 	} else if (M1.checked || M2.checked || M3.checked || M4.checked || M5.checked || M6.checked || M7.checked || M8.checked) {
-	window.alert('CMQCC Classification: Medium Risk');
+	alert('CMQCC Classification: Medium Risk');
     	} else {
-	window.alert('CMQCC Classification: Low Risk');
+	alert('CMQCC Classification: Low Risk');
   	// block of code to be executed if the condition is false
-	} 
-	//or the click will travel to the form and the form will submit
-    let fails = validate();
-    //IF we wanted to do some async things then use a Promise with .then and .catch
-    if(fails.length === 0){
-        //good to go
-        document.getElementById('form-user').submit();   
+	}  
     }else{
         //there are some errors to display
         //bad user
@@ -63,8 +63,6 @@ const send = function(ev){
         })
     }
 }
-
-
 
 document.addEventListener('DOMContentLoaded', init);
 window.alert(5 + 6);
