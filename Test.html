@@ -8,7 +8,7 @@
 <script type = "text/javascript" language = "javascript">
 const init = function(){
 document.getElementById('button-reset').addEventListener('click', reset);
-document.getElementById('button-submit').addEventListener('click', send);
+document.getElementById('button-submit').addEventListener('click', showalert);
 }
 const reset = function(ev){
     //HTML will automatically put the form back to its initial state
@@ -19,14 +19,14 @@ const reset = function(ev){
     //if you want to do anything else...
 }	 
 
-const send = function(ev){
+const showalert = function(ev){
     ev.preventDefault(); 
     ev.stopPropagation();
 	//or the click will travel to the form and the form will submit
     let fails = validate();
     //IF we wanted to do some async things then use a Promise with .then and .catch
     if(fails.length === 0){
-	document.getElementById('form-user').submit();  
+	//document.getElementById('form-user').submit();  
         let H1 = document.getElementById('PREV01')
 	let H2 = document.getElementById('CRET01')
 	let H3 = document.getElementById('HEMATOCRIT01')
@@ -76,68 +76,68 @@ window.alert(5 + 6);
 Instructions: Check conditions if present, do not check if uncertain or not present
 <h3>High-Risk Checks</h3>
   <div>
-  	<input type="checkbox" id="PREV01" value="0"> Placenta previa or low lying placenta 
+  	<input type="checkbox" id="PREV01"> Placenta previa or low lying placenta 
   </div>
   
   <div>
-  	<input type="checkbox" id="CRET01" value="0"> Suspected placenta accreta/percreta
+  	<input type="checkbox" id="CRET01"> Suspected placenta accreta/percreta
   </div>
   
   <div>
-  	<input type="checkbox" id="HEMATOCRIT01" value="0"> Hematocrit less than 30 
+  	<input type="checkbox" id="HEMATOCRIT01"> Hematocrit less than 30 
   </div>
   
   <div>
-  <input type="checkbox" id="BLEED01" value="0"> Active bleeding (greater than show) on admission 
+  <input type="checkbox" id="BLEED01"> Active bleeding (greater than show) on admission 
   </div>
   
   <div>
-  <input type="checkbox" id="PLATCOUNT01" value="0"> Platelet count less than 100,000
+  <input type="checkbox" id="PLATCOUNT01"> Platelet count less than 100,000
   </div>
   
   <div>
-  <input type="checkbox" id="COAG01" value="0"> Known coagulopathy 
+  <input type="checkbox" id="COAG01"> Known coagulopathy 
   </div>
   <br>
 
 <h3>Medium-Risk Checks</h3>
   <div>
-  <input type="checkbox" id="PCES01" value="0"> Previous cesarean delivery or uterine surgery 
+  <input type="checkbox" id="PCES01"> Previous cesarean delivery or uterine surgery 
   </div>
   
   <div>
-  <input type="checkbox" id="MGEST01" value="0"> Multiple gestation
+  <input type="checkbox" id="MGEST01"> Multiple gestation
   </div>
   
   <div>
-  <input type="checkbox" id="PAR401" value="0"> Greater than 4 previous vaginal deliveries
+  <input type="checkbox" id="PAR401"> Greater than 4 previous vaginal deliveries
   </div>
 
   <div>
-  <input type="checkbox" id="CHOR01" value="0"> Chorioamnionitis 
+  <input type="checkbox" id="CHOR01"> Chorioamnionitis 
   </div>
 
   <div>
-  <input type="checkbox" id="HISTHEM01" value="0"> History of peripartum hemorrhage   
+  <input type="checkbox" id="HISTHEM01"> History of peripartum hemorrhage   
   </div>
 
   <div>
-  <input type="checkbox" id="LEIO01" value="0"> Large uterine leiomyoma
+  <input type="checkbox" id="LEIO01"> Large uterine leiomyoma
   </div>
 
   <div>
-  <input type="checkbox" id="MACR01" value="0"> Macrosomia (estimated fetal weight > 4 kg)
+  <input type="checkbox" id="MACR01"> Macrosomia (estimated fetal weight > 4 kg)
   </div>
 
   <div>
-  <input type="checkbox" id="BMI01" value="0"> Morbid Obesity (BMI greater than 35 kg/m^2)
+  <input type="checkbox" id="BMI01"> Morbid Obesity (BMI greater than 35 kg/m^2)
   </div>
 
   <br>
   
 <h3>Low-Risk Check:</h3>
   <div>
-  <input type="checkbox" id="LOW01" value="0"> Confirm that no risk factors are indicated above
+  <input type="checkbox" id="LOW01"> Confirm that no risk factors are indicated above
   </div>
 <br>
   <div class="form-box">
