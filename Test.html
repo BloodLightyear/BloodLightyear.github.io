@@ -19,14 +19,14 @@ const reset = function(ev){
     //if you want to do anything else...
 }	 
 
-const showalert = function(ev){
+showAlert() = function(){
     //ev.preventDefault(); 
     //ev.stopPropagation();
 	//or the click will travel to the form and the form will submit
     //let fails = validate();
     //IF we wanted to do some async things then use a Promise with .then and .catch
     //if(fails.length === 0){ 
-        let H1 = document.getElementById('PREV01');
+	let H1 = document.getElementById('PREV01');
 	let H2 = document.getElementById('CRET01');
 	let H3 = document.getElementById('HEMATOCRIT01');
 	let H4 = document.getElementById('BLEED01');
@@ -142,7 +142,7 @@ Instructions: Check conditions if present, do not check if uncertain or not pres
   <button id="button-reset">Reset</button>
   <button id="button-submit">Submit</button>
   </div>
-  
+<p><input type="button" value="Click here" onClick="showAlert();"></p>  
 </form> 
 
 </body>
