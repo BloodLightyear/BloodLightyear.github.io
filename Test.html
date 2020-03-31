@@ -6,7 +6,26 @@
       </script>
 
 <script type = "text/javascript" language = "javascript">
-showAlert() = function(){
+
+
+
+	
+const init = function(){
+document.getElementById('button-reset').addEventListener('click', reset);
+}
+const reset = function(ev){
+    //HTML will automatically put the form back to its initial state
+    //unless we do 
+    ev.preventDefault();
+    // programmatically we can reset it 
+    document.getElementById('form-user').reset();
+    //if you want to do anything else...
+}	 
+
+
+
+document.addEventListener('DOMContentLoaded', init);
+//window.alert(5 + 6);
 let H1 = document.getElementById('PREV01');
 let H2 = document.getElementById('CRET01');
 let H3 = document.getElementById('HEMATOCRIT01');
@@ -30,23 +49,6 @@ if (H1.checked || H2.checked || H3.checked || H4.checked || H5.checked || H6.che
 	window.alert('CMQCC Classification: Low Risk');
 }  
 }
-	
-const init = function(){
-document.getElementById('button-reset').addEventListener('click', reset);
-}
-const reset = function(ev){
-    //HTML will automatically put the form back to its initial state
-    //unless we do 
-    ev.preventDefault();
-    // programmatically we can reset it 
-    document.getElementById('form-user').reset();
-    //if you want to do anything else...
-}	 
-
-
-
-document.addEventListener('DOMContentLoaded', init);
-//window.alert(5 + 6);
 </script>
 </head>
 
