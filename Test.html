@@ -42,10 +42,25 @@ const send = function(ev){
     }
 }
 
+const validate = function(ev){
+    //let valid = true;
+    let failures = [];
+    //checkbox (or radio buttons grouped by name)
+    let chk = document.getElementById('LOW01');
+    // .checked .value
+    if(chk.checked){
+        //valid = false;
+        //chk.parentElement.classList.add('error');
+        //chk.parentElement.setAttribute('data-errormsg', 'Must be alive to submit.');
+        failures.push({input: 'LOW01', msg: 'CMQCC classification: Low Risk'})
+    }
+    //return a boolean || an object with details about the failures
+    return failures;
 
 document.addEventListener('DOMContentLoaded', init);
 </script>
-   </head>
+</head>
+
 	
 <body>
 <h2>CMQCC</h2>
@@ -112,8 +127,10 @@ Instructions: Check conditions if present, do not check if uncertain or not pres
 
   <br>
   
-<h3>Low-Risk Note:</h3>
-No additional inputs needed for low-risk under the basic CMQCC, since it is defined by exclusion from the high and medium risk categories.<br>
+<h3>Low-Risk Check:</h3>
+  <div>
+  <input type="checkbox" id="LOW01" value="0"> Confirm that no risk factors are indicated above
+  </div>
 <br>
   <div class="form-box">
   <button id="button-reset">Reset</button>
