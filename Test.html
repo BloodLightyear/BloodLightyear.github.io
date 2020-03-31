@@ -22,13 +22,7 @@ const reset = function(ev){
 const send = function(ev){
     ev.preventDefault(); 
     ev.stopPropagation();
-    //or the click will travel to the form and the form will submit
-    let fails = validate();
-    //IF we wanted to do some async things then use a Promise with .then and .catch
-    if(fails.length === 0){
-        //good to go
-        document.getElementById('form-user').submit();
-	let H1 = document.getElementById('PREV01')
+    	let H1 = document.getElementById('PREV01')
 	let H2 = document.getElementById('CRET01')
 	let H3 = document.getElementById('HEMATOCRIT01')
 	let H4 = document.getElementById('BLEED01')
@@ -49,7 +43,13 @@ const send = function(ev){
     	} else {
 	window.alert('CMQCC Classification: Low Risk');
   	// block of code to be executed if the condition is false
-	}    
+	} 
+	//or the click will travel to the form and the form will submit
+    let fails = validate();
+    //IF we wanted to do some async things then use a Promise with .then and .catch
+    if(fails.length === 0){
+        //good to go
+        document.getElementById('form-user').submit();   
     }else{
         //there are some errors to display
         //bad user
