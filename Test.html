@@ -42,20 +42,7 @@ const send = function(ev){
     }
 }
 
-const validate = function(ev){
-    //let valid = true;
-    let failures = [];
-    //checkbox (or radio buttons grouped by name)
-    let chk = document.getElementById('LOW01');
-    // .checked .value
-    if(chk.checked){
-        //valid = false;
-        //chk.parentElement.classList.add('error');
-        //chk.parentElement.setAttribute('data-errormsg', 'Must be alive to submit.');
-        failures.push({input: 'LOW01', msg: 'CMQCC classification: Low Risk'})
-    }
-    //return a boolean || an object with details about the failures
-    return failures;
+
 
 document.addEventListener('DOMContentLoaded', init);
 </script>
