@@ -23,10 +23,10 @@ const showalert = function(ev){
     ev.preventDefault(); 
     ev.stopPropagation();
 	//or the click will travel to the form and the form will submit
-    let fails = validate();
+    //let fails = validate();
     //IF we wanted to do some async things then use a Promise with .then and .catch
-    if(fails.length === 0){
-	//document.getElementById('form-user').submit();  
+    //if(fails.length === 0){
+	document.getElementById('form-user').submit();  
         let H1 = document.getElementById('PREV01')
 	let H2 = document.getElementById('CRET01')
 	let H3 = document.getElementById('HEMATOCRIT01')
@@ -43,29 +43,29 @@ const showalert = function(ev){
 	let M8 = document.getElementById('BMI01')
 	
 	if (H1.checked || H2.checked || H3.checked || H4.checked || H5.checked || H6.checked) {
-  	alert('CMQCC Classification: High Risk');
+  	window.alert('CMQCC Classification: High Risk');
 	} else if (M1.checked || M2.checked || M3.checked || M4.checked || M5.checked || M6.checked || M7.checked || M8.checked) {
-	alert('CMQCC Classification: Medium Risk');
+	window.alert('CMQCC Classification: Medium Risk');
     	} else {
-	alert('CMQCC Classification: Low Risk');
+	window.alert('CMQCC Classification: Low Risk');
   	// block of code to be executed if the condition is false
 	}  
-    }else{
+    //}else{
         //there are some errors to display
         //bad user
         //let err = document.querySelector('.error');
         //let input = err.querySelector('input');
         //err.setAttribute('data-errormsg', ` ... Missing ${input.placeholder}`);
-        fails.forEach(function(obj){
-            let field = document.getElementById(obj.input);
-            field.parentElement.classList.add('error');
-            field.parentElement.setAttribute('data-errormsg', obj.msg);
+      //  fails.forEach(function(obj){
+      //      let field = document.getElementById(obj.input);
+      //      field.parentElement.classList.add('error');
+      //      field.parentElement.setAttribute('data-errormsg', obj.msg);
         })
     }
 }
 
 document.addEventListener('DOMContentLoaded', init);
-window.alert(5 + 6);
+//window.alert(5 + 6);
 </script>
 </head>
 
