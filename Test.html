@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Working with HTML Forms</title>
     <meta name="viewport" content="width=device-width">
     <style>
         *,
@@ -82,68 +81,68 @@ Instructions: Check conditions if present, do not check if uncertain or not pres
 	
 <form id="form-user" action="#" method="post">
 <h3>High-Risk Checks:</h3>
-  <div class="form-box">
+  <div>
   	<input type="checkbox" id="PREV01" value="yes" tabindex="1" checked> Placenta previa or low lying placenta 
   </div>
   
-  <div class="form-box">
+  <div>
   	<input type="checkbox" id="CRET01" value="yes" tabindex="2" checked> Suspected placenta accreta/percreta
   </div>
   
-  <div class="form-box">
+  <div>
   	<input type="checkbox" id="HEMATOCRIT01" value="yes" tabindex="3" checked> Hematocrit less than 30 
   </div>
   
-  <div class="form-box">
+  <div>
   <input type="checkbox" id="BLEED01" value="yes" tabindex="4" checked> Active bleeding (greater than show) on admission 
   </div>
   
-  <div class="form-box">
+  <div>
   <input type="checkbox" id="PLATCOUNT01" value="yes" tabindex="5" !checked> Platelet count less than 100,000
   </div>
   
-  <div class="form-box">
+  <div>
   <input type="checkbox" id="COAG01" value="yes" tabindex="6" !checked> Known coagulopathy 
   </div>
   <br>
 
 <h3>Medium-Risk Checks:</h3>
-  <div class="form-box">
+  <div>
   <input type="checkbox" id="PCES01" value="yes" tabindex="7" !checked> Previous cesarean delivery or uterine surgery 
   </div>
   
-  <div class="form-box">
+  <div>
   <input type="checkbox" id="MGEST01" value="yes" tabindex="8" !checked> Multiple gestation
   </div>
   
-  <div class="form-box">
+  <div>
   <input type="checkbox" id="PAR401" value="yes" tabindex="9" !checked> Greater than 4 previous vaginal deliveries
   </div>
 
-  <div class="form-box">
+  <div>
   <input type="checkbox" id="CHOR01" value="yes" tabindex="10" !checked> Chorioamnionitis 
   </div>
 
-  <div class="form-box">
+  <div>
   <input type="checkbox" id="HISTHEM01" value="yes" tabindex="11" !checked> History of peripartum hemorrhage   
   </div>
 
-  <div class="form-box">
+  <div>
   <input type="checkbox" id="LEIO01" value="yes" tabindex="12" !checked> Large uterine leiomyoma
   </div>
 
-  <div class="form-box">
+  <div>
   <input type="checkbox" id="MACR01" value="yes" tabindex="13" !checked> Macrosomia (estimated fetal weight > 4 kg)
   </div>
 
-  <div class="form-box">
+  <div>
   <input type="checkbox" id="BMI01" value="yes" tabindex="14" !checked> Morbid Obesity (BMI greater than 35 kg/m^2)
   </div>
 
   <br>
   
 <h3>Low-Risk Check:</h3>
-  <div class="form-box" data-errormsg="">
+  <div>
   <input type="checkbox" id="LOW01" value="yes" tabindex="15" !checked> Confirm that no risk factors are indicated above
   </div>
 <br>
@@ -152,27 +151,9 @@ Instructions: Check conditions if present, do not check if uncertain or not pres
   <button id="button-submit">Submit</button>
   </div>	    
 	<!--    
-        <div class="form-box error" data-errormsg="">
-            <label for="input-first">First</label>
-            <input type="text" id="input-first" autofocus placeholder="First Name" tabindex="1"/>
-        </div>
-        <div class="form-box" data-errormsg="">
-            <label for="input-password">Password</label>
-            <input type="password" id="input-password" required placeholder="Password" tabindex="2" />
-        </div>
         <div class="form-box" data-errormsg="">
             <label for="input-email">E-mail</label>
             <input type="email" id="input-email" required placeholder="E-mail Address" tabindex="3" />
-        </div>
-        <div class="form-box" data-errormsg="">
-            <label for="input-age">Age</label>
-            <select id="input-age" tabindex="4">
-                <option value="0">Under 20</option>
-                <option value="1">20-30</option>
-                <option value="2">30-40</option>
-                <option value="3">40-50</option>
-                <option value="4">Over 50</option>
-            </select>
         </div>
         <div class="form-box" data-errormsg="">
             <label for="input-alive">Alive?</label>
