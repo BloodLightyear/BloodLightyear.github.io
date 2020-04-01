@@ -2,7 +2,6 @@
 
 <html lang="en">
 <head>
-	
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <style>
@@ -63,35 +62,25 @@
             cursor: pointer;
         }
         
-        .error::after{
-            background-color: hsl(10, 60%, 50%);
-            color: papayawhip;
-            font-size: 1rem;
-            line-height: 1.8;
-            width: 350px;
-            padding-left: 1rem;
-            position:absolute;
-            right: 0;
-            content: attr(data-errormsg);
         }
     </style>
 
 <script language="javascript" type="text/javascript">
 const init = function(){
     document.getElementById('button-cancel').addEventListener('click', reset);
-    //document.getElementById('button-submit').addEventListener('click', send);
+    document.getElementById('button-submit').addEventListener('click', send);
 }
 
 const reset = function(ev){
     //HTML will automatically put the form back to its initial state
     //unless we do 
-    ev.preventDefault();
+    //ev.preventDefault();
     // programmatically we can reset it 
-    document.getElementById('form-user').reset();
-    //if you want to do anything else...
+    document.getElementById('form-MAP').reset();
 }
 
-document.addEventListener('DOMContentLoaded', init);		
+document.addEventListener('DOMContentLoaded', init);
+	
 </script>
 </head>
 <body>
@@ -99,7 +88,7 @@ document.addEventListener('DOMContentLoaded', init);
     Instructions: Check conditions if present, do not check if uncertain or not present
 <br>
 	
-<form id="form-user" action="#" method="post">
+<form id="form-MAP" action="#" method="post">
 <h3>High-Risk Checks:</h3>
   <div>
   	<input type="checkbox" id="PREV01" value="no" !checked> Placenta previa or low lying placenta 
@@ -168,7 +157,7 @@ document.addEventListener('DOMContentLoaded', init);
 <br>
   <div class="form-box">
   <button id="button-cancel">Reset</button>
-  <button id="button-send">Submit</button>
+  <button id="button-submit">Submit</button>
   </div>	    
 	<!--    
         <div class="form-box" data-errormsg="">
