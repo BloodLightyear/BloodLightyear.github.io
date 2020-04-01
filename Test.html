@@ -1,6 +1,8 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
+	
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <style>
@@ -73,6 +75,24 @@
             content: attr(data-errormsg);
         }
     </style>
+
+<script language="javascript" type="text/javascript">
+const init = function(){
+    document.getElementById('button-cancel').addEventListener('click', reset);
+    //document.getElementById('button-submit').addEventListener('click', send);
+}
+
+const reset = function(ev){
+    //HTML will automatically put the form back to its initial state
+    //unless we do 
+    ev.preventDefault();
+    // programmatically we can reset it 
+    document.getElementById('form-user').reset();
+    //if you want to do anything else...
+}
+
+document.addEventListener('DOMContentLoaded', init);		
+</script>
 </head>
 <body>
 <h2>   CMQCC</h2>
@@ -164,8 +184,7 @@
             <button id="button-send">Send</button>
         </div>
 	-->
-    </form
-    
-    <script src="./Test.js"></script>
+	</form>
+	
 </body>
 </html>
