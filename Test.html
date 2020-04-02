@@ -96,7 +96,8 @@ const send = function(ev){
 	let M6 = document.getElementById('LEIO01');
 	let M7 = document.getElementById('MACR01');
 	let M8 = document.getElementById('BMI01');
-	if (H1.checked || H2.checked || H3.checked || H4.checked || H5.checked || H6.checked) {
+	alert(H1);
+	if (H1.checked || H2.checked || H3.checked || H4.checked || H5.checked || H6.checked === true) {
   		alert('CMQCC Classification: High Risk');
 	} else if (M1.checked || M2.checked || M3.checked || M4.checked || M5.checked || M6.checked || M7.checked || M8.checked) {
 		alert('CMQCC Classification: Medium Risk');
