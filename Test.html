@@ -65,25 +65,25 @@
         }
     </style>
 
-<script language="javascript" type="text/javascript">
-const init = function(){
-    document.getElementById('button-cancel').addEventListener('click', reset);
-    document.getElementById('button-submit').addEventListener('click', send);
-}
-
-const reset = function(ev){
-    //HTML will automatically put the form back to its initial state
-    //unless we do 
-    ev.preventDefault();
-    // programmatically we can reset it 
-    document.getElementById('form-MAP').reset();
-}
-
-const send = function(ev){
-	ev.preventDefault();
-	ev.stopPropagation();
-	
-	document.getElementById('form-MAP').reset();
+//<script language="javascript" type="text/javascript">
+//const init = function(){
+//    document.getElementById('button-cancel').addEventListener('click', reset);
+//    document.getElementById('button-send').addEventListener('click', send);
+//}
+//
+//const reset = function(ev){
+//   //HTML will automatically put the form back to its initial state
+//    //unless we do 
+//    ev.preventDefault();
+//    // programmatically we can reset it 
+//    document.getElementById('form-MAP').reset();
+//}
+//
+//const send = function(ev){
+//	ev.preventDefault();
+//	ev.stopPropagation();
+//	
+//	document.getElementById('form-MAP').reset();
 //	document.getElementById('form-MAP').submit();
 //	let fails = validate();
 //	let H1 = document.getElementById('PREV01');
@@ -108,13 +108,14 @@ const send = function(ev){
 //		alert('CMQCC Classification: Low Risk');
 //	}  
 //}
+//	
+//const showalert function {
+//  alert("Hello World!");
+//}
+//	
+//document.addEventListener('DOMContentLoaded', init);
+//</script>
 	
-const showalert function {
-  alert("Hello World!");
-}
-	
-document.addEventListener('DOMContentLoaded', init);
-</script>
 <title>Test</title>	
 </head>
 <body>
