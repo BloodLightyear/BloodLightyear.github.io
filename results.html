@@ -81,10 +81,10 @@
     <a href="/Test.html">Back to Form</a>
     <script>
     const resultsList = document.getElementById('results')
-    new URLSearchParams(window.location.search).forEach((value,name) => {
-        resultsList.append(`${name}: ${value}`)
+    new URLSearchParams(window.location.search).forEach((id,value) => {
+        resultsList.append(`${id}: ${value}`)
         resultsList.append(document.createElement('br'))
-        
+    }) 
 //	let H1 = document.getElementById('PREV01');
 //	let H2 = document.getElementById('CRET01');
 //	let H3 = document.getElementById('HEMATOCRIT01');
@@ -107,7 +107,7 @@
 //		alert('CMQCC Classification: Low Risk');
 //	}
         
-    })
+
     </script>
 </body>
 </html>
