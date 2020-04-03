@@ -84,7 +84,7 @@
     new URLSearchParams(window.location.search).forEach((value,name) => {
         resultsList.append(`${name}: ${value}`)
         resultsList.append(document.createElement('br'))
-        if(${name} === 'PREV01'){
+        if(name === 'PREV01'){
             resultsList.append(`CMQCC Classification: High-risk`);
         }
     }) 
