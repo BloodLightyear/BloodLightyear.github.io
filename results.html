@@ -78,12 +78,35 @@
 </head>
 <body>
     <div id="results"></div>
-    <a href="/">Back to Form</a>
+    <a href="/Test.html">Back to Form</a>
     <script>
     const resultsList = document.getElementById('results')
     new URLSearchParams(window.location.search).forEach((value,name) => {
-        resultsList.append(`${name}: ${value}`)
+        resultsList.append(`${PREV01}: ${value}`)
         resultsList.append(document.createElement('br'))
+        
+//	let H1 = document.getElementById('PREV01');
+//	let H2 = document.getElementById('CRET01');
+//	let H3 = document.getElementById('HEMATOCRIT01');
+//	let H4 = document.getElementById('BLEED01');
+//	let H5 = document.getElementById('PLATCOUNT01');
+//	let H6 = document.getElementById('COAG01');
+//	let M1 = document.getElementById('PCES01');
+//	let M2 = document.getElementById('MGEST01');
+//	let M3 = document.getElementById('PAR401');
+//	let M4 = document.getElementById('CHOR01');
+//	let M5 = document.getElementById('HISTHEM01');
+//	let M6 = document.getElementById('LEIO01');
+//	let M7 = document.getElementById('MACR01');
+//	let M8 = document.getElementById('BMI01');
+//	if (H1.checked || H2.checked || H3.checked || H4.checked || H5.checked || H6.checked) {
+//  		alert('CMQCC Classification: High Risk');
+//	} else if (M1.checked || M2.checked || M3.checked || M4.checked || M5.checked || M6.checked || M7.checked || M8.checked) {
+//		alert('CMQCC Classification: Medium Risk');
+//    } else {
+//		alert('CMQCC Classification: Low Risk');
+//	}
+        
     })
     </script>
 </body>
