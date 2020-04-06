@@ -84,13 +84,13 @@
     new URLSearchParams(window.location.search).forEach((value,name) => {
         resultsList.append(`${name}: ${value}`)
         resultsList.append(document.createElement('br'))
-        if(name === 'PREV01' || name === 'CRET01' || name === 'HEMATOCRIT01' || name === 'BLEED01' || name === 'PLATCOUNT01' || name === 'COAG01'){
-            resultsList.append(`CMQCC Classification: High-risk`);
-        } else if (name === 'PCES01' || name === 'MGEST01' || name === 'PAR01' || name === 'CHOR01' || name === 'HISTHEM01' || name === 'LEIO01' || name === 'MACR01' || name === 'BMI01') {
-		    resultsList.append(`CMQCC Classification: Medium Risk`);
-    	} else {
-		resultsList.append(`CMQCC Classification: Low Risk`);
     }) 
+//if(name === 'PREV01' || name === 'CRET01' || name === 'HEMATOCRIT01' || name === 'BLEED01' || name === 'PLATCOUNT01' || name === 'COAG01'){
+//	resultsList.append(`CMQCC Classification: High-risk`);
+//} else if (name === 'PCES01' || name === 'MGEST01' || name === 'PAR01' || name === 'CHOR01' || name === 'HISTHEM01' || name === 'LEIO01' || name === 'MACR01' || name === 'BMI01') {
+//	resultsList.append(`CMQCC Classification: Medium Risk`);
+//} else {
+//	resultsList.append(`CMQCC Classification: Low Risk`);	    
 //	let H1 = document.getElementById('PREV01');
 //	let H2 = document.getElementById('CRET01');
 //	let H3 = document.getElementById('HEMATOCRIT01');
