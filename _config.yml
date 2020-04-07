@@ -7,7 +7,7 @@ show_downloads: True
 navigation:
   - title: Home
     url: /
-  - title: Assessment Form
+  - title: Full Assessment Form
     url: MAP
   - title: Methods
     url: Methods
@@ -15,5 +15,7 @@ navigation:
     url: Codes
   - title: Contact Information
     url: Contact
+  - title: CMQCC Analysis
+    url: CMQCC
   - title: Test
     url: Test
