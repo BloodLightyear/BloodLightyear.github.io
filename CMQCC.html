@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <style>
+        *,
+        *::after,
+        *:before{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font:normal 20px/1.5 sans-serif;
+        }
+        h1{
+            margin: 1rem 2rem;
+        }
+        form{
+            margin: 2rem;
+            width: 800px;
+        }
+        .form-box{
+            padding: 1rem;
+            clear: both;
+            width: 100%;
+            position: relative;
+        }
+        .form-box label{
+            font-size: 1rem;
+            float: left;
+            width: 100px;
+            margin-right: 20px;
+        }
+        .form-box input{
+            font-size: 1rem;
+            width: 300px;
+            padding: 0.25rem 1rem;
+        }
+        .form-box select{
+            font-size: 1rem;
+            width: 300px;
+            padding: 0.25rem 1rem;
+        }
+        .form-box option{
+            font-size: 1rem;
+            width: 300px;
+            padding: 0.25rem 1rem;
+        }
+        .form-box input[type="checkbox"]{
+            font-size: 1rem;
+        }
+        .form-box button{
+            font-size: 1rem;
+            border: none;
+            padding: 0.25rem 2rem;
+            margin-right: 1rem;
+            color: white;
+            background-color: cornflowerblue;
+            cursor: pointer;
+        }
+        
+        }
+    </style>
+
+<script language="javascript" type="text/javascript">
+//const init = function(){
+//    document.getElementById('button-cancel').addEventListener('click', reset);
+//    document.getElementById('button-send').addEventListener('click', send);
+//}
+//
+//const reset = function(ev){
+//   //HTML will automatically put the form back to its initial state
+//    //unless we do 
+//    ev.preventDefault();
+//    // programmatically we can reset it 
+//    document.getElementById('form-MAP').reset();
+//}
+//
+//const send = function(ev){
+//	ev.preventDefault();
+//	ev.stopPropagation();
+//	
+//	document.getElementById('form-MAP').reset();
+//	document.getElementById('form-MAP').submit();
+//	let fails = validate();
+//	let H1 = document.getElementById('PREV01');
+//	let H2 = document.getElementById('CRET01');
+//	let H3 = document.getElementById('HEMATOCRIT01');
+//	let H4 = document.getElementById('BLEED01');
+//	let H5 = document.getElementById('PLATCOUNT01');
+//	let H6 = document.getElementById('COAG01');
+//	let M1 = document.getElementById('PCES01');
+//	let M2 = document.getElementById('MGEST01');
+//	let M3 = document.getElementById('PAR401');
+//	let M4 = document.getElementById('CHOR01');
+//	let M5 = document.getElementById('HISTHEM01');
+//	let M6 = document.getElementById('LEIO01');
+//	let M7 = document.getElementById('MACR01');
+//	let M8 = document.getElementById('BMI01');
+//	if (H1.checked || H2.checked || H3.checked || H4.checked || H5.checked || H6.checked) {
+//  		alert('CMQCC Classification: High Risk');
+//	} else if (M1.checked || M2.checked || M3.checked || M4.checked || M5.checked || M6.checked || M7.checked || M8.checked) {
+//		alert('CMQCC Classification: Medium Risk');
+//    } else {
+//		alert('CMQCC Classification: Low Risk');
+//	}  
+//}
+//	
+//const showalert function {
+//  alert("Hello World!");
+//}
+//	
+//document.addEventListener('DOMContentLoaded', init);
+</script>
+	
+<title>Test</title>	
+</head>
+<body>
+<h2>   CMQCC</h2>
+    Instructions: Check conditions if present, do not check if uncertain or not present
+<br>
+	
+<form id="form-MAP" action="results.html" method="GET">
+<h3>High-Risk Checks:</h3>
+  <div>
+  	<input type="checkbox" name="PREV01" id="PREV01" value="yes" !checked> Placenta previa or low lying placenta 
+  </div>
+  
+  <div>
+  	<input type="checkbox" name="CRET01" id="CRET01" value="yes" !checked> Suspected placenta accreta/percreta
+  </div>
+  
+  <div>
+  	<input type="checkbox" name="HEMATOCRIT01" id="HEMATOCRIT01" value="yes" !checked> Hematocrit less than 30 
+  </div>
+  
+  <div>
+  <input type="checkbox" name="BLEED01" id="BLEED01" value="yes" !checked> Active bleeding (greater than show) on admission 
+  </div>
+  
+  <div>
+  <input type="checkbox" name="PLATCOUNT01" id="PLATCOUNT01" value="yes" !checked> Platelet count less than 100,000
+  </div>
+  
+  <div>
+  <input type="checkbox" name="COAG01" id="COAG01" value="yes" !checked> Known coagulopathy 
+  </div>
+  <br>
+
+<h3>Medium-Risk Checks:</h3>
+  <div>
+  <input type="checkbox" name="PCES01" id="PCES01" value="yes" !checked> Previous cesarean delivery or uterine surgery 
+  </div>
+  
+  <div>
+  <input type="checkbox" name="MGEST01" id="MGEST01" value="yes" !checked> Multiple gestation
+  </div>
+  
+  <div>
+  <input type="checkbox" name="PAR401" id="PAR401" value="yes" !checked> Greater than 4 previous vaginal deliveries
+  </div>
+
+  <div>
+  <input type="checkbox" name="CHOR01" id="CHOR01" value="yes" !checked> Chorioamnionitis 
+  </div>
+
+  <div>
+  <input type="checkbox" name="HISTHEM01" id="HISTHEM01" value="yes" !checked> History of peripartum hemorrhage   
+  </div>
+
+  <div>
+  <input type="checkbox" name="LEIO01" id="LEIO01" value="yes" !checked> Large uterine leiomyoma
+  </div>
+
+  <div>
+  <input type="checkbox" name="MACR01" id="MACR01" value="yes" !checked> Macrosomia (estimated fetal weight > 4 kg)
+  </div>
+
+  <div>
+  <input type="checkbox" name="BMI01" id="BMI01" value="yes" !checked> Morbid Obesity (BMI greater than 35 kg/m^2)
+  </div>
+
+  <br>
+  
+<h3>Low-Risk Check:</h3>
+  <div>
+  No additional inputs needed for low risk assessment under the basic CMQCC, as low risk is defined by the exclusion from the high and medium risk categories.	
+  </div>
+<br>
+  <div class="form-box">
+  <button type="reset">Reset</button>
+  <button type="submit">Submit</button>
+  </div>	    
+	<!--    
+        <div class="form-box" data-errormsg="">
+            <label for="input-email">E-mail</label>
+            <input type="email" id="input-email" required placeholder="E-mail Address" tabindex="3" />
+        </div>
+        <div class="form-box" data-errormsg="">
+            <label for="input-alive">Alive?</label>
+            <input type="checkbox" id="input-alive" value="yes" tabindex="5" checked />
+        </div>
+        <div class="form-box">
+            <button id="button-cancel">Cancel</button>
+            <button id="button-send">Send</button>
+        </div>
+	-->
+	</form>
+	
+</body>
+</html>
