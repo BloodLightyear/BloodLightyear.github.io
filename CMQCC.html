@@ -66,11 +66,6 @@
     </style>
 
 <script language="javascript" type="text/javascript">
-function CMQCC(){
-	var h1 = parseInt(document.forms["form-CMQCC"]["PREV01"].value);
-	var display = document.getElementById("display")
-	display.innerHTML=h1;
-}
 </script>
 	
 <title>Test</title>	
@@ -80,8 +75,7 @@ function CMQCC(){
     Instructions: Check conditions if present, do not check if uncertain or not present
 <br>
 	
-<form id="form-CMQCC" method="post">
-//action="results.html" method="GET">
+<form id="form-CMQCC" action="results.html" method="GET">
 <h3>High-Risk Checks:</h3>
   <div>
   	<input type="checkbox" name="PREV01" id="PREV01" value=1 !checked> Placenta previa or low lying placenta 
