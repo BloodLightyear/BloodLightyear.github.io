@@ -78,7 +78,8 @@
 </head>
 <body>
     <div id="results"></div>
-    <a href="/Test.html">Back to Form</a>
+    <a href="/Test.html">Back to CMQCC</a>
+    <a href="/">Back to Home</a>
     <script>
     const resultsList = document.getElementById('results')
     new URLSearchParams(window.location.search).forEach((value,name) => {
@@ -88,30 +89,34 @@
         //resultsList.append(`CMQCC: High-risk`);
         //break;
     }) 
-    var x = document.getElementById("number").value;
+    function CMQCC(){
+	var H1 = parseInt(document.forms["form-CMQCC"]["PREV01"].value);
+	var display = document.getElementById("display")
+	display.innerHTML=h1;
+}    
 //if(name === 'PREV01' || name === 'CRET01' || name === 'HEMATOCRIT01' || name === 'BLEED01' || name === 'PLATCOUNT01' || name === 'COAG01'){
 //	resultsList.append(`CMQCC Classification: High-risk`);
 //} else if (name === 'PCES01' || name === 'MGEST01' || name === 'PAR01' || name === 'CHOR01' || name === 'HISTHEM01' || name === 'LEIO01' || name === 'MACR01' || name === 'BMI01') {
 //	resultsList.append(`CMQCC Classification: Medium Risk`);
 //} else {
 //	resultsList.append(`CMQCC Classification: Low Risk`);	    
-    var H1 = document.getElementById('PREV01').value;
-    var H2 = document.getElementById('CRET01').value;
-    var H3 = document.getElementById('HEMATOCRIT01').value;
-    var H4 = document.getElementById('BLEED01').value;
-    var H5 = document.getElementById('PLATCOUNT01').value;
-    var H6 = document.getElementById('COAG01').value;
-    let M1 = document.getElementById('PCES01');
-    let M2 = document.getElementById('MGEST01');
-    let M3 = document.getElementById('PAR401');
-    let M4 = document.getElementById('CHOR01');
-    let M5 = document.getElementById('HISTHEM01');
-    let M6 = document.getElementById('LEIO01');
-    let M7 = document.getElementById('MACR01');
-    let M8 = document.getElementById('BMI01');
-    if (H1 === "yes" || H2 === "yes" || H3 === "yes"|| H4 === "yes"|| H5 === "yes" || H6 === "yes") {
-    resultsList.append(`CMQCC: High-risk`);//alert('CMQCC Classification: High Risk');
-    }
+//    var H1 = document.getElementById('PREV01').value;
+//    var H2 = document.getElementById('CRET01').value;
+//    var H3 = document.getElementById('HEMATOCRIT01').value;
+//    var H4 = document.getElementById('BLEED01').value;
+//    var H5 = document.getElementById('PLATCOUNT01').value;
+//    var H6 = document.getElementById('COAG01').value;
+//    let M1 = document.getElementById('PCES01');
+//    let M2 = document.getElementById('MGEST01');
+//    let M3 = document.getElementById('PAR401');
+//    let M4 = document.getElementById('CHOR01');
+//    let M5 = document.getElementById('HISTHEM01');
+//    let M6 = document.getElementById('LEIO01');
+//    let M7 = document.getElementById('MACR01');
+//    let M8 = document.getElementById('BMI01');
+//    if (H1 === "yes" || H2 === "yes" || H3 === "yes"|| H4 === "yes"|| H5 === "yes" || H6 === "yes") {
+//    resultsList.append(`CMQCC: High-risk`);//alert('CMQCC Classification: High Risk');
+//    }
 //	} else if (M1.checked || M2.checked || M3.checked || M4.checked || M5.checked || M6.checked || M7.checked || M8.checked) {
 //		alert('CMQCC Classification: Medium Risk');
 //    } else {
