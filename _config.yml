@@ -9,13 +9,13 @@ navigation:
     url: /
   - title: Full Assessment Form
     url: MAP
+  - title: CMQCC Analysis
+    url: CMQCC
+  - title: Test
+    url: Test
   - title: Methods
     url: Methods
   - title: Codes
     url: Codes
   - title: Contact Information
     url: Contact
-  - title: CMQCC Analysis
-    url: CMQCC
-  - title: Test
-    url: Test
