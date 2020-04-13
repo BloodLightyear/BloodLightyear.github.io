@@ -83,14 +83,14 @@
     <a href="/">Back to Home</a>
     <script>
     const resultsList = document.getElementById('results')
+	const highrisk = 0
+	const mediumrisk = 0
     new URLSearchParams(window.location.search).forEach((value,name) => {
         resultsList.append(`${name}: ${value}`)
         resultsList.append(document.createElement('br'))
-        //if(name === 'PREV01' || name === 'CRET01' || name === 'HEMATOCRIT01' || name === 'BLEED01' || name === 'PLATCOUNT01' || name === 'COAG01'){
-        //resultsList.append(`CMQCC: High-risk`);
-        //break;
-    }) 
-	console.log(document.forms["form-CMQCC"]["PREV01"].value)
+    })
+	let PREV01 = new URLSearchParams(window.location.search).get('PREV01')
+	alert(PREV01)
 //if(name === 'PREV01' || name === 'CRET01' || name === 'HEMATOCRIT01' || name === 'BLEED01' || name === 'PLATCOUNT01' || name === 'COAG01'){
 //	resultsList.append(`CMQCC Classification: High-risk`);
 //} else if (name === 'PCES01' || name === 'MGEST01' || name === 'PAR01' || name === 'CHOR01' || name === 'HISTHEM01' || name === 'LEIO01' || name === 'MACR01' || name === 'BMI01') {
