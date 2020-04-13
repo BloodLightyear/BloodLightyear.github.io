@@ -73,7 +73,7 @@
             content: attr(data-errormsg);
         }
     </style>
-    <title>Results</title>
+    <title>MAP Results</title>
 </head>
 <body>
     <div id="results"></div>
@@ -113,148 +113,149 @@
 	}
 	    
 	resultsList.append(CMQCC);
-	resultsList.append(document.createElement('br'));
+	//resultsList.append(document.createElement('br'));
 	    
 	let AGE40 = parseFloat(new URLSearchParams(window.location.search).get('AGE40'));    
 	let ASTH01 = parseFloat(new URLSearchParams(window.location.search).get('ASTH01'));
+	let CAUC01 = parseFloat(new URLSearchParams(window.location.search).get('CAUC01'))
 	
 	let HEM = -3.1603;
 	let TRANS = -4.6539;
-	alert(HEM + TRANS);
+	alert(HEM);
 	    
 	if(AGE40 === 1){
-	HEM = HEM + 0.3511;
-	TRANS = TRANS + 0.4059;
+	HEM += 0.3511;
+	TRANS += 0.4059;
 	}
 	    
-	if( === 1){
-	HEM = HEM + 0.1999;
+	if(ASTH01 === 1){
+	HEM += 0.1999;
 	}
 	
-	if(parseFloat(new URLSearchParams(window.location.search).get('CAUC01')) === 1){
-	TRANS = TRANS - 0.7825;
+	if(CAUC01 === 1){
+	TRANS -= 0.7825;
 	}
 
 	if(parseFloat(new URLSearchParams(window.location.search).get('CERC01')) === 1){
-	HEM = HEM + 0.1836;
+	HEM += 0.1836;
 	}
 	    
 	if(parseFloat(new URLSearchParams(window.location.search).get('CRET01')) === 1){
-	HEM = HEM + 2.1030;
-	TRANS = TRANS + 1.8715;
+	HEM += 2.1030;
+	TRANS += 1.8715;
 	}
 	    
 	if(parseFloat(new URLSearchParams(window.location.search).get('DIAB01')) === 1){
-	HEM = HEM + 0.1620;
-	TRANS = TRANS + 0.2520;
+	HEM += 0.1620;
+	TRANS += 0.2520;
 	}
 	
 	if(parseFloat(new URLSearchParams(window.location.search).get('DEP01')) === 1){
-	TRANS = TRANS + 0.2533;
+	TRANS += 0.2533;
 	}
 	    
 	if(parseFloat(new URLSearchParams(window.location.search).get('ENDO01')) === 1){
-	HEM = HEM + 1.1456;
-	TRANS = TRANS + 1.6078;
+	HEM += 1.1456;
+	TRANS += 1.6078;
 	}
 	   
 	if(parseFloat(new URLSearchParams(window.location.search).get('HF01')) === 1){
-	HEM = HEM + 1.6663;
-	TRANS = TRANS + 2.8316;
+	HEM += 1.6663;
+	TRANS += 2.8316;
 	}
 	    
 	if(parseFloat(new URLSearchParams(window.location.search).get('HD01')) === 1){
-	HEM = HEM + 0.0601;
-	TRANS = TRANS + 0.8696;
+	HEM += 0.0601;
+	TRANS += 0.8696;
 	}
 	    
 	if(parseFloat(new URLSearchParams(window.location.search).get('HYP01')) === 1){
-	HEM = HEM + 0.4057;
-	TRANS = TRANS + 0.5883;
+	HEM += 0.4057;
+	TRANS += 0.5883;
 	}
 	    
 	if(parseFloat(new URLSearchParams(window.location.search).get('LUP01')) === 1){
-	TRANS = TRANS + 0.0.9537;
+	TRANS += 0.9537;
 	}
 	
 	if(parseFloat(new URLSearchParams(window.location.search).get('MGEST01')) === 1){
-	HEM = HEM + 0.0.8440;
-	TRANS = TRANS + 0.8752;
+	HEM += 0.8440;
+	TRANS += 0.8752;
 	}
 	    
 	if(parseFloat(new URLSearchParams(window.location.search).get('MINFERT01')) === 1){
-	HEM = HEM + 0.0623;
-	TRANS = TRANS + 0.6413;
+	HEM += 0.0623;
+	TRANS += 0.6413;
 	}
 	    
 	if(parseFloat(new URLSearchParams(window.location.search).get('FIRSTDEL01')) === 1){
-	HEM = HEM + 0.0985;
+	HEM += 0.0985;
 	}
 	
 	if(parseFloat(new URLSearchParams(window.location.search).get('PAR401')) === 1){
-	HEM = HEM + 0.4142;
-	TRANS = TRANS + 0.3655;
+	HEM += 0.4142;
+	TRANS += 0.3655;
 	}
 	    
 	if(parseFloat(new URLSearchParams(window.location.search).get('PCES01')) === 1){
-	HEM = HEM + 0.0443;
-	TRANS = TRANS + 0.5721;
+	HEM += 0.0443;
+	TRANS += 0.5721;
 	}
 	 
 	if(parseFloat(new URLSearchParams(window.location.search).get('PLAC01')) === 1){
-	HEM = HEM + 0.9229;
-	TRANS = TRANS + 1.7958;
+	HEM += 0.9229;
+	TRANS += 1.7958;
 	}	    
 	    
 	if(parseFloat(new URLSearchParams(window.location.search).get('POLY01')) === 1){
-	HEM = HEM + 0.5494;
-	TRANS = TRANS + 0.7421;
+	HEM += 0.5494;
+	TRANS += 0.7421;
 	}	    
 	  
 	if(parseFloat(new URLSearchParams(window.location.search).get('PREC01')) === 1){
-	HEM = HEM + 0.6010;
-	TRANS = TRANS + 0.7474;
+	HEM += 0.6010;
+	TRANS += 0.7474;
 	}	    
 	    
 	if(parseFloat(new URLSearchParams(window.location.search).get('PREV01')) === 1){
-	HEM = HEM + 1.9011;
-	TRANS = TRANS + 2.8248;
+	HEM += 1.9011;
+	TRANS += 2.8248;
 	}
 	    
 	if(parseFloat(new URLSearchParams(window.location.search).get('RENF01')) === 1){
-	HEM = HEM + 1.282;
-	TRANS = TRANS + 2.0824;
+	HEM += 1.282;
+	TRANS += 2.0824;
 	}
 
 	if(parseFloat(new URLSearchParams(window.location.search).get('RENALA01')) === 1){
-	HEM = HEM + 0.3970;
-	TRANS = TRANS + 0.4343;
+	HEM += 0.3970;
+	TRANS += 0.4343;
 	}	    
 	    
 	if(parseFloat(new URLSearchParams(window.location.search).get('SICKL01')) === 1){
-	HEM = HEM + 0.1667;
-	TRANS = TRANS + 0.7939;
+	HEM += 0.1667;
+	TRANS += 0.7939;
 	}	    
 	    
 	if(parseFloat(new URLSearchParams(window.location.search).get('RENINS01')) === 1){
-	TRANS = TRANS + 1.1250;
+	TRANS += 1.1250;
 	}
 
 	if(parseFloat(new URLSearchParams(window.location.search).get('SMOKE01')) === 1){
-	TRANS = TRANS - 0.1454;
+	TRANS -= 0.1454;
 	}
 	    
 	if(parseFloat(new URLSearchParams(window.location.search).get('UTI01')) === 1){
-	TRANS = TRANS + 0.9345;
+	TRANS += 0.9345;
 	}
 	
 	    
 
 	//alert(CMQCC);    
-        resultsList.append(TRANS);
-	resultsList.append(document.createElement('br'))
-	resultsList.append(HEM);
-	resultsList.append(document.createElement('br'))
+        //resultsList.append(TRANS);
+	//resultsList.append(document.createElement('br'))
+	//resultsList.append(HEM);
+	//resultsList.append(document.createElement('br'))
 	//alert(HEM);
 	//alert(TRANS);    
 	    
