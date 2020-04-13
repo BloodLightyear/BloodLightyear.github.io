@@ -110,13 +110,14 @@
 	//alert(medium);
 	if(H1 === 1 || H2 === 1 || H3 === 1 || H4 === 1 || H5 === 1 || H6 === 1){
 	risk = 'CMQCC designation is High Risk';
-	} else if(M1 === 1){
+	} else if(M1 === 1 || M2 === 1 || M3 === 1 || M4 === 1 || M5 === 1 || M6 === 1 || M7 === 1 || M8 === 1){
 	risk = 'CMQCC designation is Medium Risk';
 	} else{
 	risk = 'CMQCC designation is Low Risk';
 	}
 	alert(risk);    
-		
+	
+	resultsList.append(risk);
 
 //if(name === 'PREV01' || name === 'CRET01' || name === 'HEMATOCRIT01' || name === 'BLEED01' || name === 'PLATCOUNT01' || name === 'COAG01'){
 //	resultsList.append(`CMQCC Classification: High-risk`);
