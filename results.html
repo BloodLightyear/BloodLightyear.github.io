@@ -104,8 +104,10 @@
 	let M6 = parseFloat(new URLSearchParams(window.location.search).get('LEIO01'));
 	let M7 = parseFloat(new URLSearchParams(window.location.search).get('MACR01'));
 	let M8 = parseFloat(new URLSearchParams(window.location.search).get('BMI01'));
-	let high = H1+H2+H3+H4+H5+H6;
-	let medium = M1+M2+M3+M4+M5+M6+M7+M8;
+	let high = H1 + H2 + H3 + H4 + H5 + H6;
+	let medium = M1 + M2 + M3 + M4 + M5 + M6 + M7 + M8;
+	alert(high);
+	alert(medium);
 	if(high > 0){
 	risk = "CMQCC designation is High Risk";
 	} else if( medium > 0){
@@ -113,7 +115,7 @@
 	} else{
 	risk = 'CMQCC designation is Low Risk'
 	}
-	alert(risk)    
+	alert(risk);    
 		
 
 //if(name === 'PREV01' || name === 'CRET01' || name === 'HEMATOCRIT01' || name === 'BLEED01' || name === 'PLATCOUNT01' || name === 'COAG01'){
