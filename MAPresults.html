@@ -266,12 +266,14 @@
    	resultsList.append('MAP Assessment:');
 	resultsList.append(document.createElement('br'))
 	resultsList.append(MAP_TRANS);
-	resultsList.append(document.createElement('br'))    
-	resultsList.append(P_TRANS*100.0); //'Transfusion Risk Estimate: ' + num.toString(Math.round(P_TRANS*100)))
+	resultsList.append(document.createElement('br'))
+	resultsList.append('Transfusion Risk Estimate: ');
+	resultsList.append(P_TRANS*100.0.toFixed(1)); //'Transfusion Risk Estimate: ' + num.toString(Math.round(P_TRANS*100)))
 	resultsList.append(document.createElement('br'))
 	resultsList.append(MAP_HEM);
-	resultsList.append(document.createElement('br'))    
-	resultsList.append(P_HEM*100.0); //'Hemorrhage Risk Estimate: ' + num.toString(Math.round(P_HEM*100)))
+	resultsList.append(document.createElement('br'))
+	resultsList.append('Hemorrhage Risk Estimate: ');
+	resultsList.append(P_HEM*100.0.toFixed(1)); //'Hemorrhage Risk Estimate: ' + num.toString(Math.round(P_HEM*100)))
 	resultsList.append(document.createElement('br'))
 	resultsList.append(document.createElement('br'))
 	    
