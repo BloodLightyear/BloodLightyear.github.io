@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Working with HTML Forms</title>
+    <meta name="viewport" content="width=device-width">
+    <style>
+        *,
+        *::after,
+        *:before{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font:normal 20px/1.5 sans-serif;
+        }
+        h1{
+            margin: 1rem 2rem;
+        }
+        form{
+            margin: 2rem;
+            width: 800px;
+        }
+        .form-box{
+            padding: 1rem;
+            clear: both;
+            width: 100%;
+            position: relative;
+        }
+        .form-box label{
+            font-size: 1rem;
+            float: left;
+            width: 100px;
+            margin-right: 20px;
+        }
+        .form-box input{
+            font-size: 1rem;
+            width: 300px;
+            padding: 0.25rem 1rem;
+        }
+        .form-box select{
+            font-size: 1rem;
+            width: 300px;
+            padding: 0.25rem 1rem;
+        }
+        .form-box option{
+            font-size: 1rem;
+            width: 300px;
+            padding: 0.25rem 1rem;
+        }
+        .form-box input[type="checkbox"]{
+            font-size: 1rem;
+        }
+        .form-box button{
+            font-size: 1rem;
+            border: none;
+            padding: 0.25rem 2rem;
+            margin-right: 1rem;
+            color: white;
+            background-color: cornflowerblue;
+            cursor: pointer;
+        }
+        
+        .error::after{
+            background-color: hsl(10, 60%, 50%);
+            color: papayawhip;
+            font-size: 1rem;
+            line-height: 1.8;
+            width: 350px;
+            padding-left: 1rem;
+            position:absolute;
+            right: 0;
+            content: attr(data-errormsg);
+        }
+    </style>
+    <title>Results</title>
+</head>
+<body>
+    <div id="results"></div>
+    <a href="/Test.html">Back to CMQCC</a>
+	<br>
+    <a href="/">Back to Home</a>
+    <script>
+    const resultsList = document.getElementById('results')
+	new URLSearchParams(window.location.search).forEach((value,name) => {
+        resultsList.append(`${name}: ${value}`)
+        resultsList.append(document.createElement('br'))
+    })
+		
+	//const highrisk = 0
+	//const mediumrisk = 0
+	let H1 = parseFloat(new URLSearchParams(window.location.search).get('PREV01'));
+	let H2 = parseFloat(new URLSearchParams(window.location.search).get('CRET01'));
+	let H3 = parseFloat(new URLSearchParams(window.location.search).get('HEMATOCRIT01'));
+	let H4 = parseFloat(new URLSearchParams(window.location.search).get('BLEED01'));
+	let H5 = parseFloat(new URLSearchParams(window.location.search).get('PLATCOUNT01'));
+	let H6 = parseFloat(new URLSearchParams(window.location.search).get('COAG01'));
+	let M1 = parseFloat(new URLSearchParams(window.location.search).get('PCES01'));
+	let M2 = parseFloat(new URLSearchParams(window.location.search).get('MGEST01'));
+	let M3 = parseFloat(new URLSearchParams(window.location.search).get('PAR401'));
+	let M4 = parseFloat(new URLSearchParams(window.location.search).get('CHOR01'));
+	let M5 = parseFloat(new URLSearchParams(window.location.search).get('HISTHEM01'));
+	let M6 = parseFloat(new URLSearchParams(window.location.search).get('LEIO01'));
+	let M7 = parseFloat(new URLSearchParams(window.location.search).get('MACR01'));
+	let M8 = parseFloat(new URLSearchParams(window.location.search).get('BMI01'));
+	//let high = H1 + H2 + H3 + H4 + H5 + H6
+	//let medium = M1 + M2 + M3 + M4 + M5 + M6 + M7 + M8
+	//alert(high);
+	//alert(medium);
+	if(H1 === 1 || H2 === 1 || H3 === 1 || H4 === 1 || H5 === 1 || H6 === 1){
+	risk = 'CMQCC designation is High Risk';
+	} else if(M1 === 1 || M2 === 1 || M3 === 1 || M4 === 1 || M5 === 1 || M6 === 1 || M7 === 1 || M8 === 1){
+	risk = 'CMQCC designation is Medium Risk';
+	} else{
+	risk = 'CMQCC designation is Low Risk';
+	}
+	alert(risk);    
+	
+	resultsList.append(risk);
+
+//if(name === 'PREV01' || name === 'CRET01' || name === 'HEMATOCRIT01' || name === 'BLEED01' || name === 'PLATCOUNT01' || name === 'COAG01'){
+//	resultsList.append(`CMQCC Classification: High-risk`);
+//} else if (name === 'PCES01' || name === 'MGEST01' || name === 'PAR01' || name === 'CHOR01' || name === 'HISTHEM01' || name === 'LEIO01' || name === 'MACR01' || name === 'BMI01') {
+//	resultsList.append(`CMQCC Classification: Medium Risk`);
+//} else {
+//	resultsList.append(`CMQCC Classification: Low Risk`);	    
+//    var H1 = document.getElementById('PREV01').value;
+//    var H2 = document.getElementById('CRET01').value;
+//    var H3 = document.getElementById('HEMATOCRIT01').value;
+//    var H4 = document.getElementById('BLEED01').value;
+//    var H5 = document.getElementById('PLATCOUNT01').value;
+//    var H6 = document.getElementById('COAG01').value;
+//    let M1 = document.getElementById('PCES01');
+//    let M2 = document.getElementById('MGEST01');
+//    let M3 = document.getElementById('PAR401');
+//    let M4 = document.getElementById('CHOR01');
+//    let M5 = document.getElementById('HISTHEM01');
+//    let M6 = document.getElementById('LEIO01');
+//    let M7 = document.getElementById('MACR01');
+//    let M8 = document.getElementById('BMI01');
+//    if (H1 === "yes" || H2 === "yes" || H3 === "yes"|| H4 === "yes"|| H5 === "yes" || H6 === "yes") {
+//    resultsList.append(`CMQCC: High-risk`);//alert('CMQCC Classification: High Risk');
+//    }
+//	} else if (M1.checked || M2.checked || M3.checked || M4.checked || M5.checked || M6.checked || M7.checked || M8.checked) {
+//		alert('CMQCC Classification: Medium Risk');
+//    } else {
+//		alert('CMQCC Classification: Low Risk');
+//	}
+        
+
+    </script>
+</body>
+</html>
