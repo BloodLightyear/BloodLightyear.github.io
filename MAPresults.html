@@ -104,16 +104,7 @@
 	let M6 = parseFloat(new URLSearchParams(window.location.search).get('LEIO01'));
 	let M7 = parseFloat(new URLSearchParams(window.location.search).get('MACR01'));
 	let M8 = parseFloat(new URLSearchParams(window.location.search).get('BMI01'));
-	if(H1 === 1 || H2 === 1 || H3 === 1 || H4 === 1 || H5 === 1 || H6 === 1){
-	CMQCC = 'CMQCC designation is High Risk';
-	} else if(M1 === 1 || M2 === 1 || M3 === 1 || M4 === 1 || M5 === 1 || M6 === 1 || M7 === 1 || M8 === 1){
-	CMQCC = 'CMQCC designation is Medium Risk';
-	} else{
-	CMQCC = 'CMQCC designation is Low Risk';
-	}
-	//alert(CMQCC);    
-	resultsList.append(CMQCC);
-        let HEM = -3.1603;
+	let HEM = -3.1603;
 	let TRANS = -4.6539;
 	
 	if(parseFloat(new URLSearchParams(window.location.search).get('AGE40')) === 1){
@@ -242,8 +233,23 @@
 	TRANS = TRANS + 0.9345;
 	}
 	
-	alert(HEM)
-	alert(TRANS)    
+	    
+	if(H1 === 1 || H2 === 1 || H3 === 1 || H4 === 1 || H5 === 1 || H6 === 1){
+	CMQCC = 'CMQCC designation is High Risk';
+	} else if(M1 === 1 || M2 === 1 || M3 === 1 || M4 === 1 || M5 === 1 || M6 === 1 || M7 === 1 || M8 === 1){
+	CMQCC = 'CMQCC designation is Medium Risk';
+	} else{
+	CMQCC = 'CMQCC designation is Low Risk';
+	}
+	//alert(CMQCC);    
+	resultsList.append(CMQCC);
+	resultsList.append(document.createElement('br'))
+        resultsList.append(TRANS);
+	resultsList.append(document.createElement('br'))
+	resultsList.append(HEM);
+	resultsList.append(document.createElement('br'))
+	//alert(HEM);
+	//alert(TRANS);    
 	    
     </script>
 </body>
