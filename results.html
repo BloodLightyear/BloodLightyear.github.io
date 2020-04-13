@@ -91,7 +91,6 @@
 	//const highrisk = 0
 	//const mediumrisk = 0
 	let H1 = parseFloat(new URLSearchParams(window.location.search).get('PREV01'));
-	alert(H1)
 	let H2 = parseFloat(new URLSearchParams(window.location.search).get('CRET01'));
 	let H3 = parseFloat(new URLSearchParams(window.location.search).get('HEMATOCRIT01'));
 	let H4 = parseFloat(new URLSearchParams(window.location.search).get('BLEED01'));
@@ -109,7 +108,7 @@
 	//let medium = M1 + M2 + M3 + M4 + M5 + M6 + M7 + M8
 	//alert(high);
 	//alert(medium);
-	if(H1 === 1 || H2 === 1){
+	if(H1 === 1 || H2 === 1 || H3 === 1 || H4 === 1 || H5 === 1 || H6 === 1){
 	risk = 'CMQCC designation is High Risk';
 	} else if(M1 === 1){
 	risk = 'CMQCC designation is Medium Risk';
