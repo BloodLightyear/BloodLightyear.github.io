@@ -112,16 +112,16 @@
 	CMQCC = 'CMQCC designation is Low Risk';
 	}
 	    
+	//alert(CMQCC); 	    
 	resultsList.append(CMQCC);
-	//resultsList.append(document.createElement('br'));
+	resultsList.append(document.createElement('br'));
 	    
 	let AGE40 = parseFloat(new URLSearchParams(window.location.search).get('AGE40'));    
 	let ASTH01 = parseFloat(new URLSearchParams(window.location.search).get('ASTH01'));
-	let CAUC01 = parseFloat(new URLSearchParams(window.location.search).get('CAUC01'))
+	let CAUC01 = parseFloat(new URLSearchParams(window.location.search).get('CAUC01'));
 	
 	let HEM = -3.1603;
 	let TRANS = -4.6539;
-	alert(HEM);
 	    
 	if(AGE40 === 1){
 	HEM += 0.3511;
@@ -249,13 +249,30 @@
 	TRANS += 0.9345;
 	}
 	
-	    
+	
+	let P_HEM = 1 / (1 + Math.exp(HEM));    
+	let P_TRANS = 1 / (1 + Math.exp(TRANS)); 
 
-	//alert(CMQCC);    
-        //resultsList.append(TRANS);
-	//resultsList.append(document.createElement('br'))
-	//resultsList.append(HEM);
-	//resultsList.append(document.createElement('br'))
+	if(P_HEM > 0.287){
+	MAP_HEM = 'MAP designation is High Hemorrhage Risk';
+	} else if(P_HEM > 0.05){
+	MAP_HEM = 'MAP designation is Medium Hemorrhage Risk';
+	} else{
+	MAP_HEM = 'MAP designation is Low Hemorrhage Risk';
+	}
+	    
+	if(P_TRANS > 0.287){
+	MAP_TRANS = 'MAP designation is High Transfusion Risk';
+	} else if(P_TRANS > 0.05){
+	MAP_TRANS = 'MAP designation is Medium Transfusion Risk';
+	} else{
+	MAP_TRANS = 'MAP designation is Low Transfusion Risk';
+	}
+   
+        resultsList.append(MAP_TRANS);
+	resultsList.append(document.createElement('br'))
+	resultsList.append(MAP_HEM);
+	resultsList.append(document.createElement('br'))
 	//alert(HEM);
 	//alert(TRANS);    
 	    
