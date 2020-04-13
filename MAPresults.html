@@ -262,18 +262,22 @@
 	} else{
 	MAP_TRANS = 'Transfusion Risk: Low Risk';
 	}
+	
+	var TRANS_Risk = P_TRANS*100.0;
+	var HEM_Risk = P_HEM*100.0;
 	    
+	resultsList.append(document.createElement('br'))    
    	resultsList.append('MAP Assessment:');
 	resultsList.append(document.createElement('br'))
 	resultsList.append(MAP_TRANS);
 	resultsList.append(document.createElement('br'))
-	resultsList.append('Transfusion Risk Estimate: ');
-	resultsList.append(P_TRANS*100.0.toFixed(1)); //'Transfusion Risk Estimate: ' + num.toString(Math.round(P_TRANS*100)))
+	resultsList.append('Estimated Risk: ');
+	resultsList.append(TRANS_Risk.toFixed(1)); //'Transfusion Risk Estimate: ' + num.toString(Math.round(P_TRANS*100)))
 	resultsList.append(document.createElement('br'))
 	resultsList.append(MAP_HEM);
 	resultsList.append(document.createElement('br'))
-	resultsList.append('Hemorrhage Risk Estimate: ');
-	resultsList.append(P_HEM*100.0.toFixed(1)); //'Hemorrhage Risk Estimate: ' + num.toString(Math.round(P_HEM*100)))
+	resultsList.append('Estimated Risk: ');
+	resultsList.append(HEM_Risk.toFixed(1)); //'Hemorrhage Risk Estimate: ' + num.toString(Math.round(P_HEM*100)))
 	resultsList.append(document.createElement('br'))
 	resultsList.append(document.createElement('br'))
 	    
