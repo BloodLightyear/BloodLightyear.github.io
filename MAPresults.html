@@ -248,26 +248,33 @@
 	let P_TRANS = 1 / (1 + Math.exp(TRANS)); 
 
 	if(P_HEM > 0.287){
-	MAP_HEM = 'MAP Hemorrhage Risk: High Risk';
+	MAP_HEM = 'Hemorrhage Risk: High Risk';
 	} else if(P_HEM > 0.05){
-	MAP_HEM = 'MAP Hemorrhage Risk: Medium Risk';
+	MAP_HEM = 'Hemorrhage Risk: Medium Risk';
 	} else{
-	MAP_HEM = 'MAP Hemorrhage Risk: Low Risk';
+	MAP_HEM = 'Hemorrhage Risk: Low Risk';
 	}
 	    
 	if(P_TRANS > 0.202){
-	MAP_TRANS = 'MAP Transfusion Risk: High Risk';
+	MAP_TRANS = 'Transfusion Risk: High Risk';
 	} else if(P_TRANS > 0.03){
-	MAP_TRANS = 'MAP Transfusion Risk: Medium Risk';
+	MAP_TRANS = 'Transfusion Risk: Medium Risk';
 	} else{
-	MAP_TRANS = 'MAP Transfusion Risk: Low Risk';
+	MAP_TRANS = 'Transfusion Risk: Low Risk';
 	}
-   
-        resultsList.append(MAP_TRANS);
+	    
+   	resultsList.append('MAP Assessment:');
+	resultsList.append(document.createElement('br'))
+	resultsList.append(MAP_TRANS);
+	resultsList.append(document.createElement('br'))    
+	resultsList.append('Transfusion Risk Estimate: ' + num.toString(Math.round(P_TRANS*100)))
 	resultsList.append(document.createElement('br'))
 	resultsList.append(MAP_HEM);
+	resultsList.append(document.createElement('br'))    
+	resultsList.append('Hemorrhage Risk Estimate: ' + num.toString(Math.round(P_HEM*100)))
 	resultsList.append(document.createElement('br'))
 	resultsList.append(document.createElement('br'))
+	    
 	resultsList.append('Features Selected:')
 	resultsList.append(document.createElement('br'))
 	//alert(HEM);
