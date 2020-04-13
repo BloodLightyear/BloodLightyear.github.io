@@ -85,12 +85,18 @@
     const resultsList = document.getElementById('results')
 	const highrisk = 0
 	const mediumrisk = 0
-    new URLSearchParams(window.location.search).forEach((value,name) => {
+	let H1 = new URLSearchParams(window.location.search).get('PREV01')
+	let H2 = new URLSearchParams(window.location.search).get('CRET01')
+	let H3 = new URLSearchParams(window.location.search).get('HEMATOCRIT01')
+	let H4 = new URLSearchParams(window.location.search).get('BLEED01')
+	let H5 = new URLSearchParams(window.location.search).get('PLATCOUNT01')
+	let H6 = new URLSearchParams(window.location.search).get('COAG01')
+	alert(H1+H2+H3+H4+H5+H6)
+	new URLSearchParams(window.location.search).forEach((value,name) => {
         resultsList.append(`${name}: ${value}`)
         resultsList.append(document.createElement('br'))
     })
-	let PREV01 = new URLSearchParams(window.location.search).get('PREV01')
-	alert(PREV01)
+
 //if(name === 'PREV01' || name === 'CRET01' || name === 'HEMATOCRIT01' || name === 'BLEED01' || name === 'PLATCOUNT01' || name === 'COAG01'){
 //	resultsList.append(`CMQCC Classification: High-risk`);
 //} else if (name === 'PCES01' || name === 'MGEST01' || name === 'PAR01' || name === 'CHOR01' || name === 'HISTHEM01' || name === 'LEIO01' || name === 'MACR01' || name === 'BMI01') {
