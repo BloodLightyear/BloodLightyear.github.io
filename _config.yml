@@ -1,21 +1,21 @@
 theme: jekyll-theme-minimal
 title: Maternal Assistance Programming
-description: Directly outputing assessments from CMQCC, modified CMQCC, and a numerical risk prediction - currently using the Codes links. Eventually, using the assessment form.  Details behind each type of assessment can be found in the methods section!
+description: Directly outputing assessments from CMQCC and a numerical risk prediction - links to the assessment forms. Addditionally, can run the python codes under the codes link. Details behind each type of assessment can be found in the methods section!
 
 
 show_downloads: True
 navigation:
   - title: Home
     url: /
-  - title: Full Assessment Form
-    url: MAP
-  - title: CMQCC Analysis
+  - title: Antepartum Assessment Form
+    url: Antepartum
+  - title: CMQCC Assessment Form
     url: CMQCC
-  - title: Test
-    url: Test
   - title: Methods
     url: Methods
   - title: Codes
     url: Codes
   - title: Contact Information
     url: Contact
+  - title: Test
+    url: Test
