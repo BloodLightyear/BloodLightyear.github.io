@@ -73,11 +73,11 @@
             content: attr(data-errormsg);
         }
     </style>
-    <title>MAP Antepartum Results</title>
+    <title>Peripartum Results</title>
 </head>
 <body>
     <div id="results"></div>
-    <a href="/Antepartum.html">Back to Antepartum Assessment Form</a>
+    <a href="/Peripartum.html">Back to Peripartum Assessment Form</a>
 	<br>
     <a href="/">Back to Home</a>
     <script>
@@ -114,13 +114,46 @@
 	//let ASTH01 = parseFloat(new URLSearchParams(window.location.search).get('ASTH01'));
 	//let CAUC01 = parseFloat(new URLSearchParams(window.location.search).get('CAUC01'));
 	
-	let HEM = -3.1603;
-	let TRANS = -4.6539;
+	let HEM = -3.1746;
+	let TRANS = -4.7460;
 	    
-	if(parseFloat(new URLSearchParams(window.location.search).get('AGE40')) === 1){
-	HEM += 0.3511;
-	TRANS += 0.4059;
+	if(parseFloat(new URLSearchParams(window.location.search).get('CES01')) === 1){
+	HEM += 0.2309
+	TRANS += 0.6601;
+	}	    
+	    
+	if(parseFloat(new URLSearchParams(window.location.search).get('SICKLCR01')) === 1){
+	HEM += 2.9207;
+	TRANS += 4.1838;
 	}
+	    
+	if(parseFloat(new URLSearchParams(window.location.search).get('RDIS01')) === 1){
+	HEM += 2.1455;
+	TRANS += 2.8958;
+	}	
+	    
+	if(parseFloat(new URLSearchParams(window.location.search).get('PRE01')) === 1){
+	TRANS += 0.2446;
+	}	    
+	 
+	if(parseFloat(new URLSearchParams(window.location.search).get('PROL01')) === 1){
+	TRANS += 0.3382;
+	}
+	    
+	    
+	    
+	    
+	    
+	//UPDATED for peripartum coefficients - but from antepartum model    
+	if(parseFloat(new URLSearchParams(window.location.search).get('AGE40')) === 1){
+	HEM += 0.3353;
+	TRANS += 0.3848;
+	}
+	 
+	if(parseFloat(new URLSearchParams(window.location.search).get('ARR01')) === 1){
+	HEM += 0.5598;
+	TRANS += 1.0910;
+	}	    
 	    
 	if(parseFloat(new URLSearchParams(window.location.search).get('ASTH01')) === 1){
 	HEM += 0.1999;
