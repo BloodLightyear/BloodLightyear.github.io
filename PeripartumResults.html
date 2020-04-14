@@ -1,1 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <style>
+        *,
+        *::after,
+        *:before{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font:normal 20px/1.5 sans-serif;
+        }
+        h1{
+            margin: 1rem 2rem;
+        }
+        form{
+            margin: 2rem;
+            width: 800px;
+        }
+        .form-box{
+            padding: 1rem;
+            clear: both;
+            width: 100%;
+            position: relative;
+        }
+        .form-box label{
+            font-size: 1rem;
+            float: left;
+            width: 100px;
+            margin-right: 20px;
+        }
+        .form-box input{
+            font-size: 1rem;
+            width: 300px;
+            padding: 0.25rem 1rem;
+        }
+        .form-box select{
+            font-size: 1rem;
+            width: 300px;
+            padding: 0.25rem 1rem;
+        }
+        .form-box option{
+            font-size: 1rem;
+            width: 300px;
+            padding: 0.25rem 1rem;
+        }
+        .form-box input[type="checkbox"]{
+            font-size: 1rem;
+        }
+        .form-box button{
+            font-size: 1rem;
+            border: none;
+            padding: 0.25rem 2rem;
+            margin-right: 1rem;
+            color: white;
+            background-color: cornflowerblue;
+            cursor: pointer;
+        }
+        
+        .error::after{
+            background-color: hsl(10, 60%, 50%);
+            color: papayawhip;
+            font-size: 1rem;
+            line-height: 1.8;
+            width: 350px;
+            padding-left: 1rem;
+            position:absolute;
+            right: 0;
+            content: attr(data-errormsg);
+        }
+    </style>
+    <title>MAP Antepartum Results</title>
+</head>
+<body>
+    <div id="results"></div>
+    <a href="/Antepartum.html">Back to Antepartum Assessment Form</a>
+	<br>
+    <a href="/">Back to Home</a>
+    <script>
+    const resultsList = document.getElementById('results')
+		
+	let H1 = parseFloat(new URLSearchParams(window.location.search).get('PREV01'));
+	let H2 = parseFloat(new URLSearchParams(window.location.search).get('CRET01'));
+	let H3 = parseFloat(new URLSearchParams(window.location.search).get('HEMATOCRIT01'));
+	let H4 = parseFloat(new URLSearchParams(window.location.search).get('BLEED01'));
+	let H5 = parseFloat(new URLSearchParams(window.location.search).get('PLATCOUNT01'));
+	let H6 = parseFloat(new URLSearchParams(window.location.search).get('COAG01'));
+	let M1 = parseFloat(new URLSearchParams(window.location.search).get('PCES01'));
+	let M2 = parseFloat(new URLSearchParams(window.location.search).get('MGEST01'));
+	let M3 = parseFloat(new URLSearchParams(window.location.search).get('PAR401'));
+	let M4 = parseFloat(new URLSearchParams(window.location.search).get('CHOR01'));
+	let M5 = parseFloat(new URLSearchParams(window.location.search).get('HISTHEM01'));
+	let M6 = parseFloat(new URLSearchParams(window.location.search).get('LEIO01'));
+	let M7 = parseFloat(new URLSearchParams(window.location.search).get('MACR01'));
+	let M8 = parseFloat(new URLSearchParams(window.location.search).get('BMI01'));
+	    
+	if(H1 === 1 || H2 === 1 || H3 === 1 || H4 === 1 || H5 === 1 || H6 === 1){
+	CMQCC = 'CMQCC: High Risk';
+	} else if(M1 === 1 || M2 === 1 || M3 === 1 || M4 === 1 || M5 === 1 || M6 === 1 || M7 === 1 || M8 === 1){
+	CMQCC = 'CMQCC: Medium Risk';
+	} else{
+	CMQCC = 'CMQCC: Low Risk';
+	}
+	    
+	//alert(CMQCC); 	    
+	resultsList.append(CMQCC);
+	resultsList.append(document.createElement('br'));
+	    
+	//let AGE40 = parseFloat(new URLSearchParams(window.location.search).get('AGE40'));    
+	//let ASTH01 = parseFloat(new URLSearchParams(window.location.search).get('ASTH01'));
+	//let CAUC01 = parseFloat(new URLSearchParams(window.location.search).get('CAUC01'));
+	
+	let HEM = -3.1603;
+	let TRANS = -4.6539;
+	    
+	if(parseFloat(new URLSearchParams(window.location.search).get('AGE40')) === 1){
+	HEM += 0.3511;
+	TRANS += 0.4059;
+	}
+	    
+	if(parseFloat(new URLSearchParams(window.location.search).get('ASTH01')) === 1){
+	HEM += 0.1999;
+	}
+	
+	if(parseFloat(new URLSearchParams(window.location.search).get('CAUC01')) === 1){
+	TRANS -= 0.7825;
+	}
 
+	if(parseFloat(new URLSearchParams(window.location.search).get('CERC01')) === 1){
+	HEM += 0.1836;
+	}
+	    
+	if(parseFloat(new URLSearchParams(window.location.search).get('CRET01')) === 1){
+	HEM += 2.1030;
+	TRANS += 1.8715;
+	}
+	    
+	if(parseFloat(new URLSearchParams(window.location.search).get('DIAB01')) === 1){
+	HEM += 0.1620;
+	TRANS += 0.2520;
+	}
+	
+	if(parseFloat(new URLSearchParams(window.location.search).get('DEP01')) === 1){
+	TRANS += 0.2533;
+	}
+	    
+	if(parseFloat(new URLSearchParams(window.location.search).get('ENDO01')) === 1){
+	HEM += 1.1456;
+	TRANS += 1.6078;
+	}
+	   
+	if(parseFloat(new URLSearchParams(window.location.search).get('HF01')) === 1){
+	HEM += 1.6663;
+	TRANS += 2.8316;
+	}
+	    
+	if(parseFloat(new URLSearchParams(window.location.search).get('HD01')) === 1){
+	HEM += 0.0601;
+	TRANS += 0.8696;
+	}
+	    
+	if(parseFloat(new URLSearchParams(window.location.search).get('HYP01')) === 1){
+	HEM += 0.4057;
+	TRANS += 0.5883;
+	}
+	    
+	if(parseFloat(new URLSearchParams(window.location.search).get('LUP01')) === 1){
+	TRANS += 0.9537;
+	}
+	
+	if(parseFloat(new URLSearchParams(window.location.search).get('MGEST01')) === 1){
+	HEM += 0.8440;
+	TRANS += 0.8752;
+	}
+	    
+	if(parseFloat(new URLSearchParams(window.location.search).get('MINFERT01')) === 1){
+	HEM += 0.0623;
+	TRANS += 0.6413;
+	}
+	    
+	if(parseFloat(new URLSearchParams(window.location.search).get('FIRSTDEL01')) === 1){
+	HEM += 0.0985;
+	}
+	
+	if(parseFloat(new URLSearchParams(window.location.search).get('PAR401')) === 1){
+	HEM += 0.4142;
+	TRANS += 0.3655;
+	}
+	    
+	if(parseFloat(new URLSearchParams(window.location.search).get('PCES01')) === 1){
+	HEM += 0.0443;
+	TRANS += 0.5721;
+	}
+	 
+	if(parseFloat(new URLSearchParams(window.location.search).get('PLAC01')) === 1){
+	HEM += 0.9229;
+	TRANS += 1.7958;
+	}	    
+	    
+	if(parseFloat(new URLSearchParams(window.location.search).get('POLY01')) === 1){
+	HEM += 0.5494;
+	TRANS += 0.7421;
+	}	    
+	  
+	if(parseFloat(new URLSearchParams(window.location.search).get('PREC01')) === 1){
+	HEM += 0.6010;
+	TRANS += 0.7474;
+	}	    
+	    
+	if(parseFloat(new URLSearchParams(window.location.search).get('PREV01')) === 1){
+	HEM += 1.9011;
+	TRANS += 2.8248;
+	}
+	    
+	if(parseFloat(new URLSearchParams(window.location.search).get('RENF01')) === 1){
+	HEM += 1.282;
+	TRANS += 2.0824;
+	}
+
+	if(parseFloat(new URLSearchParams(window.location.search).get('RENALA01')) === 1){
+	HEM += 0.3970;
+	TRANS += 0.4343;
+	}	    
+	    
+	if(parseFloat(new URLSearchParams(window.location.search).get('SICKL01')) === 1){
+	HEM += 0.1667;
+	TRANS += 0.7939;
+	}	    
+	    
+	if(parseFloat(new URLSearchParams(window.location.search).get('RENINS01')) === 1){
+	TRANS += 1.1250;
+	}
+
+	if(parseFloat(new URLSearchParams(window.location.search).get('SMOKE01')) === 1){
+	TRANS -= 0.1454;
+	}
+	    
+	if(parseFloat(new URLSearchParams(window.location.search).get('UTI01')) === 1){
+	TRANS += 0.9345;
+	}
+	
+	
+	let P_HEM = 1 / (1 + Math.exp(-HEM));    
+	let P_TRANS = 1 / (1 + Math.exp(-TRANS)); 
+
+	if(P_HEM > 0.287){
+	MAP_HEM = 'Hemorrhage Risk: High Risk';
+	} else if(P_HEM > 0.05){
+	MAP_HEM = 'Hemorrhage Risk: Medium Risk';
+	} else{
+	MAP_HEM = 'Hemorrhage Risk: Low Risk';
+	}
+	    
+	if(P_TRANS > 0.202){
+	MAP_TRANS = 'Transfusion Risk: High Risk';
+	} else if(P_TRANS > 0.03){
+	MAP_TRANS = 'Transfusion Risk: Medium Risk';
+	} else{
+	MAP_TRANS = 'Transfusion Risk: Low Risk';
+	}
+	
+	var TRANS_Risk = P_TRANS*100.0;
+	var HEM_Risk = P_HEM*100.0;
+	    
+	resultsList.append(document.createElement('br'))    
+   	resultsList.append('MAP Assessment:');
+	resultsList.append(document.createElement('br'))
+	resultsList.append(MAP_TRANS);
+	resultsList.append(document.createElement('br'))
+	resultsList.append('Estimated Risk: ');
+	resultsList.append(TRANS_Risk.toFixed(1)); //'Transfusion Risk Estimate: ' + num.toString(Math.round(P_TRANS*100)))
+	resultsList.append(document.createElement('br'))
+	resultsList.append(MAP_HEM);
+	resultsList.append(document.createElement('br'))
+	resultsList.append('Estimated Risk: ');
+	resultsList.append(HEM_Risk.toFixed(1)); //'Hemorrhage Risk Estimate: ' + num.toString(Math.round(P_HEM*100)))
+	resultsList.append(document.createElement('br'))
+	resultsList.append(document.createElement('br'))
+	    
+	resultsList.append('Features Selected:')
+	resultsList.append(document.createElement('br'))
+	//alert(HEM);
+	//alert(TRANS);
+	    
+	new URLSearchParams(window.location.search).forEach((value,name) => {
+        resultsList.append(`${name}: ${value}`)
+        resultsList.append(document.createElement('br'))
+    	})
+	    
+    </script>
+</body>
+</html>
