@@ -121,7 +121,12 @@
 	HEM += 0.3511;
 	TRANS += 0.4059;
 	}
-	    
+	
+	if(parseFloat(new URLSearchParams(window.location.search).get('ARR01')) === 1){
+	HEM += 0.6196;
+	TRANS += 1.1942;
+	}
+	
 	if(parseFloat(new URLSearchParams(window.location.search).get('ASTH01')) === 1){
 	HEM += 0.1999;
 	}
