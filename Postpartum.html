@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <style>
+        *,
+        *::after,
+        *:before{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font:normal 20px/1.5 sans-serif;
+        }
+        h1{
+            margin: 1rem 2rem;
+        }
+        h2{
+            margin: 1rem 2rem;
+            font-weight: normal;
+        }
+        form{
+            margin: 2rem;
+            width: 800px;
+        }
+        .form-box{
+            padding: 1rem;
+            clear: both;
+            width: 100%;
+            position: relative;
+        }
+        .form-box label{
+            font-size: 1rem;
+            float: left;
+            width: 100px;
+            margin-right: 20px;
+        }
+        .form-box input{
+            font-size: 1rem;
+            width: 300px;
+            padding: 0.25rem 1rem;
+        }
+        .form-box select{
+            font-size: 1rem;
+            width: 300px;
+            padding: 0.25rem 1rem;
+        }
+        .form-box option{
+            font-size: 1rem;
+            width: 300px;
+            padding: 0.25rem 1rem;
+        }
+        .form-box input[type="checkbox"]{
+            font-size: 1rem;
+        }
+        .form-box button{
+            font-size: 1rem;
+            border: none;
+            padding: 0.25rem 2rem;
+            margin-right: 1rem;
+            color: white;
+            background-color: cornflowerblue;
+            cursor: pointer;
+        }
+        
+        }
+    </style>
+
+<script language="javascript" type="text/javascript">
+</script>
+	
+<title>Peripartum</title>	
+</head>
+<body>
+<h1>Peripartum Assessment</h1>
+<h2>Instructions: Check conditions if present, do not check if uncertain or not present</h2>
+	
+<form id="form-peripartum" action="PeripartumResults.html" method="GET">
+<h3>CMQCC High-Risk Checks:</h3>
+  <div>
+  	<input type="checkbox" name="PREV01" id="PREV01" value=1 !checked> Placenta previa or low lying placenta 
+  </div>
+  
+  <div>
+  	<input type="checkbox" name="CRET01" id="CRET01" value=1 !checked> Suspected placenta accreta/percreta
+  </div>
+  
+  <div>
+  	<input type="checkbox" name="HEMATOCRIT01" id="HEMATOCRIT01" value=1 !checked> Hematocrit less than 30 
+  </div>
+  
+  <div>
+  <input type="checkbox" name="BLEED01" id="BLEED01" value=1 !checked> Active bleeding (greater than show) on admission 
+  </div>
+  
+  <div>
+  <input type="checkbox" name="PLATCOUNT01" id="PLATCOUNT01" value=1 !checked> Platelet count less than 100,000
+  </div>
+  
+  <div>
+  <input type="checkbox" name="COAG01" id="COAG01" value=1 !checked> Known coagulopathy 
+  </div>
+  <br>
+
+<h3>CMQCC Medium-Risk Checks:</h3>
+  <div>
+  <input type="checkbox" name="PCES01" id="PCES01" value=1 !checked> Previous cesarean delivery or uterine surgery 
+  </div>
+  
+  <div>
+  <input type="checkbox" name="MGEST01" id="MGEST01" value=1 !checked> Multiple gestation
+  </div>
+  
+  <div>
+  <input type="checkbox" name="PAR401" id="PAR401" value=1 !checked> Greater than 4 previous vaginal deliveries
+  </div>
+
+  <div>
+  <input type="checkbox" name="CHOR01" id="CHOR01" value=1 !checked> Chorioamnionitis 
+  </div>
+
+  <div>
+  <input type="checkbox" name="HISTHEM01" id="HISTHEM01" value=1 !checked> History of peripartum hemorrhage   
+  </div>
+
+  <div>
+  <input type="checkbox" name="LEIO01" id="LEIO01" value=1 !checked> Large uterine leiomyoma
+  </div>
+
+  <div>
+  <input type="checkbox" name="MACR01" id="MACR01" value=1 !checked> Macrosomia (estimated fetal weight > 4 kg)
+  </div>
+
+  <div>
+  <input type="checkbox" name="BMI01" id="BMI01" value=1 !checked> Morbid Obesity (BMI greater than 35 kg/m^2)
+  </div>
+
+  <br>
+  
+<h3>Additional Maternal Antepartum Checks:</h3>
+<div>
+	<input type="checkbox" name="AGE40" id="AGE40" value=1 !checked> Age over 40
+</div>
+
+<div>
+	<input type="checkbox" name="ARR01" id="ARR01" value=1 !checked> Arrhythmia
+</div>	
+	
+<div>
+	<input type="checkbox" name="ASTH01" id="ASTH01" value=1 !checked> Asthma
+</div>	
+
+<div>
+	<input type="checkbox" name="CAUC01" id="CAUC01" value=1 !checked> Caucasian race
+</div>
+	
+<div>
+	<input type="checkbox" name="CERC01" id="CERC01" value=1 !checked> Cervical cerclage
+</div>
+	
+<div>
+	<input type="checkbox" name="DIAB01" id="DIAB01" value=1 !checked> Diabetes (type I, type II, gestational)
+</div>
+	
+<div>
+	<input type="checkbox" name="DEP01" id="DEP01" value=1 !checked> Clinical depression
+</div>
+	
+<div>
+	<input type="checkbox" name="ENDO01" id="ENDO01" value=1 !checked> Endometriosis
+</div>
+	
+<div>
+	<input type="checkbox" name="FIRSTDEL01" id="FIRSTDEL01" value=1 !checked> First delivery
+</div>
+	
+<div>
+	<input type="checkbox" name="HF01" id="HF01" value=1 !checked> Heart failure
+</div>
+	
+<div>
+	<input type="checkbox" name="HD01" id="HD01" value=1 !checked> Heart disease
+</div>
+	
+<div>
+	<input type="checkbox" name="HYP01" id="HYP01" value=1 !checked> Hypertension
+</div>
+	
+<div>
+	<input type="checkbox" name="LUP01" id="LUP01" value=1 !checked> Lupus
+</div>
+	
+<div>
+	<input type="checkbox" name="MINFERT01" id="MINFERT01" value=1 !checked> Maternal infertility
+</div>
+	
+<div>
+	<input type="checkbox" name="PLAC01" id="PLAC01" value=1 !checked> Placental abruption
+</div>
+
+<div>
+	<input type="checkbox" name="POLY01" id="POLY01" value=1 !checked> Polyhydroamnios
+</div>
+	
+<div>
+	<input type="checkbox" name="PREC01" id="PREC01" value=1 !checked> Preeclampsia
+</div>
+	
+<div>
+	<input type="checkbox" name="RENALA01" id="RENALA01" value=1 !checked> Renal abnormality
+</div>
+	
+<div>
+	<input type="checkbox" name="RENINS01" id="RENINS01" value=1 !checked> Renal insufficiency
+</div>
+	
+<div>
+	<input type="checkbox" name="RENF01" id="RENF01" value=1 !checked> Renal failure
+</div>
+	
+<div>
+	<input type="checkbox" name="SICKL01" id="SICKL01" value=1 !checked> Sickle cell trait
+</div>
+	
+<div>
+	<input type="checkbox" name="SMOKE01" id="SMOKE01" value=1 !checked> Smoking (maternal smoking history)
+</div>
+	
+<div>
+	<input type="checkbox" name="UTI01" id="UTI01" value=1 !checked> Urinary tract infection
+</div>
+<br>
+  
+<h3>Additional Maternal Peripartum Checks:</h3>
+<div>
+	<input type="checkbox" name="CES01" id="CES01" value=1 !checked> Cesarean section
+</div>
+  
+<div>
+	<input type="checkbox" name="PRE01" id="PRE01" value=1 !checked> Preterm labor
+</div>
+
+<div>
+	<input type="checkbox" name="PROL01" id="PROL01" value=1 !checked> Prolonged labor
+</div>
+  
+<div>
+	<input type="checkbox" name="RDIS01" id="RDIS01" value=1 !checked> Respiratory distress
+</div>  
+  
+<div>
+	<input type="checkbox" name="SICKLCR01" id="SICKLCR01" value=1 !checked> Sickle cell crisis
+</div>
+<br>
+  
+<h3>Additional Maternal Postpartum Checks:</h3>
+<div>
+	<input type="checkbox" name="FD01" id="FD01" value=1 !checked> Fetal death
+</div>
+
+<br>
+  
+<div class="form-box">
+  <button type="reset">Reset</button>
+  <button type="submit">Submit</button>
+</div>
+</form>
+	
+</body>
+</html>
