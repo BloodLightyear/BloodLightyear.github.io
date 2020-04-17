@@ -141,6 +141,15 @@
 
   <br>
   
+	
+	
+	
+	
+	
+	
+	
+	
+	
 <h3>Additional Maternal Antepartum Checks:</h3>
 <div>
 	<input type="checkbox" name="AGE40" id="AGE40" value=1 !checked> Age over 40
@@ -234,6 +243,14 @@
 	<input type="checkbox" name="UTI01" id="UTI01" value=1 !checked> Urinary tract infection
 </div>
 <br>
+	
+	
+	
+	
+	
+	
+	
+	
   
 <h3>Additional Maternal Peripartum Checks:</h3>
 <div>
@@ -256,13 +273,44 @@
 	<input type="checkbox" name="SICKLCR01" id="SICKLCR01" value=1 !checked> Sickle cell crisis
 </div>
 <br>
+	
+	
+	
+	
+	
   
 <h3>Additional Maternal Postpartum Checks:</h3>
 <div>
-	<input type="number" name="APGAR1" id="APGAR1" min="0" max="10" step="1"> APGAR score 1 minute after birth
+	<input type="range" name="APGAR1" id="APGAR1" list="tickmarks"> APGAR score 1 minute after birth
+<datalist id="tickmarks">
+  <option value=0 label="0"></option>
+  <option value=1></option>
+  <option value=2></option>
+  <option value=3></option>
+  <option value=4></option>
+  <option value=5 label="5"></option>
+  <option value=6></option>
+  <option value=7></option>
+  <option value=8></option>
+  <option value=9></option>
+  <option value=10 label="10"></option>
+</datalist>
 </div>
 <div>
-	<input type="range" name="APGAR5" id="APGAR5" min="0" max="10" step="1"> APGAR score 5 minutes after birth
+	<input type="range" name="APGAR5" id="APGAR5" list="tickmarks" value=0> APGAR score 5 minutes after birth
+<datalist id="tickmarks">
+  <option value=0 label="0"></option>
+  <option value=1></option>
+  <option value=2></option>
+  <option value=3></option>
+  <option value=4></option>
+  <option value=5 label="5"></option>
+  <option value=6></option>
+  <option value=7></option>
+  <option value=8></option>
+  <option value=9></option>
+  <option value=10 label="10"></option>
+</datalist>
 </div>
 <div>
 	<input type="checkbox" name="FD01" id="FD01" value=1 !checked> Fetal death
