@@ -72,13 +72,13 @@
 <script language="javascript" type="text/javascript">
 </script>
 	
-<title>Peripartum</title>	
+<title>Postpartum</title>	
 </head>
 <body>
-<h1>Peripartum Assessment</h1>
+<h1>Postpartum Assessment</h1>
 <h2>Instructions: Check conditions if present, do not check if uncertain or not present</h2>
 	
-<form id="form-peripartum" action="PeripartumResults.html" method="GET">
+<form id="form-postpartum" action="PostpartumResults.html" method="GET">
 <h3>CMQCC High-Risk Checks:</h3>
   <div>
   	<input type="checkbox" name="PREV01" id="PREV01" value=1 !checked> Placenta previa or low lying placenta 
@@ -170,7 +170,7 @@
 </div>
 	
 <div>
-	<input type="checkbox" name="ENDO01" id="ENDO01" value=1 !checked> Endometriosis
+	<input type="checkbox" name="ENDO01" id="ENDO01" value=1 !checked> Endometritis
 </div>
 	
 <div>
@@ -182,11 +182,11 @@
 </div>
 	
 <div>
-	<input type="checkbox" name="HD01" id="HD01" value=1 !checked> Heart disease
+	<input type="checkbox" name="HD01" id="HD01" value=1 !checked> Heart disease (congenital, rheumatic, myocarditis/cardiomyopathy, valve disorder, artificial valves, or other) 
 </div>
 	
 <div>
-	<input type="checkbox" name="HYP01" id="HYP01" value=1 !checked> Hypertension
+	<input type="checkbox" name="HYP01" id="HYP01" value=1 !checked> Chronic hypertension
 </div>
 	
 <div>
@@ -210,15 +210,15 @@
 </div>
 	
 <div>
-	<input type="checkbox" name="RENALA01" id="RENALA01" value=1 !checked> Renal abnormality
+	<input type="checkbox" name="RENALA01" id="RENALA01" value=1 !checked> Renal abnormality (glomerulonephritis, pyelonephritis, lupus nephritis, nephrotic syndromes, nephrolithiasis, transplant, renal abscess, or other)
 </div>
 	
 <div>
-	<input type="checkbox" name="RENINS01" id="RENINS01" value=1 !checked> Renal insufficiency
+	<input type="checkbox" name="RENINS01" id="RENINS01" value=1 !checked> Infant renal insufficiency
 </div>
 	
 <div>
-	<input type="checkbox" name="RENF01" id="RENF01" value=1 !checked> Renal failure
+	<input type="checkbox" name="RENF01" id="RENF01" value=1 !checked> Maternal acute renal failure
 </div>
 	
 <div>
@@ -258,9 +258,40 @@
   
 <h3>Additional Maternal Postpartum Checks:</h3>
 <div>
+	<input type="range" name="APGAR1" id="APGAR1" min="0" max="10"> APGAR score 1 minute after birth
+</div>
+<div>
+	<input type="range" name="APGAR5" id="APGAR5" min="0" max="10"> APGAR score 5 minutes after birth
+</div>
+<div>
 	<input type="checkbox" name="FD01" id="FD01" value=1 !checked> Fetal death
 </div>
-
+<div>
+	<input type="checkbox" name="FORC01" id="FORC01" value=1 !checked> Forceps used
+</div>
+<div>
+	<input type="checkbox" name="GENANEST01" id="GENANEST01" value=1 !checked> General anesthesia
+</div>
+<div>
+	<input type="checkbox" name="NUCH01" id="NUCH01" value=1 !checked> Nuchal cord
+</div>		
+<div>
+	<input type="checkbox" name="DYST01" id="DYST01" value=1 !checked> Shoulder dystocia
+</div>			
+<div>
+	<input type="checkbox" name="UMBPROLPS01" id="UMBPROLPS01" value=1 !checked> Umbilical proplapse
+</div>
+<div>
+	<input type="checkbox" name="UR01" id="UR01" value=1 !checked> Uterine ruptures
+</div>
+<div>
+	<input type="checkbox" name="VLAC01" id="VLAC01" value=1 !checked> Vaginal laceration
+</div>
+	
+<div>
+	<input type="checkbox" name="VENT01" id="VENT01" value=1 !checked> Ventalation needed
+</div>	
+<br>
 <br>
   
 <div class="form-box">
