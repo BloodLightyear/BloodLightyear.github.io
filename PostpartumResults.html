@@ -346,11 +346,18 @@
 	TRANS -= 0.10669*parseFloat(new URLSearchParams(window.location.search).get('APGAR1'));
 	}
 	    
-	if(parseFloat(new URLSearchParams(window.location.search).get('APGAR5')) > 0){
+	if(parseFloat(new URLSearchParams(window.location.search).get('APGAR5')) === 'Unknown'){
 	TRANS += 0.02950*parseFloat(new URLSearchParams(window.location.search).get('APGAR1'));
 	}	    
 	    
+	if(new URLSearchParams(window.location.search).get('APGAR1') === 'Unknown'){
+	HEM -= 0.01337*10;
+	TRANS -= 0.10669*10;
+	}
 	    
+	if(new URLSearchParams(window.location.search).get('APGAR5') === 'Unknown'){
+	TRANS += 0.02950*10;
+	}		    
 
 	       
 	
